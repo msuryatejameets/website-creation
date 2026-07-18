@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './gemininavbar';
-import './gemini.css';
+import { useState, useEffect } from 'react';
+import Navbar from './NavBar';
+import './Gemini.css';
 
-function App() {
+function Gemini() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
       <main>
         {/* Hero Section */}
         <div id="hero" className="section-wrapper">
-          <section id="hero-section" classclassName="section">
+          <section id="hero-section" className="section">
             <div className="split-layout">
               <div>
                 <div className="cosmic-badge">
@@ -140,4 +140,4 @@ function App() {
   );
 }
 
-export default App;
+export default Gemini;

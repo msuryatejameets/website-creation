@@ -4,12 +4,12 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
-import Gemini from './gemini_template/gemini.jsx'
+import Gemini from './pages/Gemini/Gemini';
 import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
       <Route path="/gemini" element={<Gemini />} />
         <Route path="/" element={<Layout />}>
