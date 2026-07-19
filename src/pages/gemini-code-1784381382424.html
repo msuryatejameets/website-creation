@@ -26,6 +26,9 @@
             --brand-facebook: #1877f2;
             --brand-spotify: #1ed760;
             --brand-youtube: #ff0000;
+            --brand-linkedin: #0077b5;
+            --brand-quora: #b92b27;
+            --brand-researchgate: #00CCBB;
         }
 
         /* Base Resets & Smooth Traversal Configuration */
@@ -173,6 +176,7 @@
         /* Main Showcase Image Blocks */
         .image-container {
             position: relative;
+            height: 90%;
             width: 100%;
             aspect-ratio: 4 / 5;
             border-radius: 24px;
@@ -187,30 +191,29 @@
             width: 100%;
             height: 480px;
         }
-
         .img-main {
-            width: 80%;
-            height: 85%;
+            width: 60%;
+            height: 70%;
             position: absolute;
             top: 0;
             left: 0;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            background: #0f172a url('../assets/ajithphotos/circleastro.jpg') center/cover no-repeat;
+            background: #111827 url('../assets/ajithphotos/circleastro.jpg') center/cover no-repeat;
         }
-
         .img-offset {
-            width: 55%;
-            height: 60%;
+            width: 45%;
+            height: 70%;
+            aspect-ratio: 3 / 4;
             position: absolute;
             bottom: 0;
             right: 0;
             border-radius: 20px;
-            border: 4px solid var(--bg-nebula-tint);
+            border: 1px solid var(--bg-nebula-tint);
             box-shadow: 0 30px 50px rgba(0,0,0,0.5);
-            background: #111827 url('../assets/ajithphotos/grecord.jpg') center/cover no-repeat;
-        }
+            background: #0f172a url('../assets/ajithphotos/grecord.jpg') center/cover no-repeat;
+            }
 
         /* Typography Custom Elements */
         .cosmic-badge {
@@ -228,6 +231,78 @@
             letter-spacing: 0.075em;
             margin-bottom: 1.5rem;
         }
+            /* Achievement Card Container */
+    .achievement-card {
+    border: 1px solid var(--accent-clinical, #00b4d8); 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    background: rgba(11, 21, 40, 0.4); 
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .achievement-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(100, 255, 218, 0.15);
+    }
+
+    /* Certified Status Badge */
+    .badge-certified {
+    color: var(--accent-cosmic, #64ffda); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-size: 0.85rem;
+    }
+
+    /* Main Card Title */
+    .achievement-title {
+    margin-top: 0; 
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    }
+
+    /* Descriptive Paragraph */
+    .achievement-description {
+    color: #b3c5ef; 
+    line-height: 1.6; 
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    }
+
+    .achievement-description strong {
+    color: #ffffff;
+    }
+
+    /* Call-to-Action Link Button */
+    .btn-record {
+    background: var(--accent-cosmic, #64ffda); 
+    color: #050b14; /* Dark text for high contrast on glowing background */
+    width: auto; 
+    display: inline-flex; 
+    text-transform: uppercase; 
+    padding: 0.75rem 1.5rem; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    letter-spacing: 0.5px; 
+    text-decoration: none; 
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-record:hover {
+    transform: scale(1.02);
+    background: #ffffff;
+    }
+
+    .btn-record:focus {
+    outline: 2px solid var(--accent-clinical, #00b4d8);
+    outline-offset: 2px;
+    }
 
         h1 {
             font-size: 3.5rem;
@@ -303,7 +378,9 @@
         .btn-facebook { background: var(--brand-facebook); box-shadow: 0 4px 15px rgba(24, 119, 246, 0.25); }
         .btn-spotify { background: var(--brand-spotify); color: #000000; box-shadow: 0 4px 15px rgba(30, 215, 96, 0.25); }
         .btn-youtube { background: var(--brand-youtube); box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25); }
-
+        .btn-linkedin { background: var(--brand-linkedin); box-shadow: 0 4px 15px rgba(0, 119, 181, 0.25); }
+        .btn-quora { background: var(--brand-quora); box-shadow: 0 4px 15px rgba(185, 43, 39, 0.25); }
+        .btn-researchgate { background: var(--brand-researchgate); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
         /* Grid Services Panels */
         .grid-layout {
             display: grid;
@@ -361,19 +438,18 @@
                     <div>
                         <div class="cosmic-badge">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            Junior Resident & Aspiring Neurosurgeon
+                            Junior Resident - General Surgery & Aspiring Neuro Surgeon
                         </div>
                         <h1>Navigating the Delicate <span>Inner Cosmos</span></h1>
-                        <h4>Department of General Surgery</h4>
+                        <h4>Dr. R. Ajith Kumar</h4>
                         <p class="lead-text">Bridging structural clinical rigor at Salem Polyclinic Hospital with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.</p>
-                        <a href="#about" class="btn-brand" style="background: var(--accent-cosmic); width: auto; display: inline-flex;">View Clinical Foundation</a>
-                    </div>
+                        <a href="https://salempolyclinic.com/" target="_blank" rel="noopener noreferrer" class="btn-brand" style="background: var(--accent-cosmic); width: auto; display: inline-flex; text-transform: uppercase;">VIEW HOSPITAL DETAILS</a>
+                        </div>
                     <!-- Primary Photo Frame: Map file to images/hero_stargazing.jpg -->
                     <div class="image-container"></div>
                 </div>
             </section>
         </div>
-
         <!-- About Section Canvas -->
         <div id="about" class="section-wrapper">
             <section id="about-section" class="section">
@@ -384,10 +460,29 @@
                         <div class="img-offset"></div>
                     </div>
                     <div>
-                        <div class="cosmic-badge">Clinical Foundation</div>
-                        <h2>Medical Rigor & Astronomical Perspective</h2>
-                        <p class="lead-text">Acquired fundamental medical expertise during MBBS training at <strong>Sree Mookambika Institute Of Medical Sciences</strong> (Padanilam, Kulasekharam). Applying macro astronomical perspective to microscopic diagnostic landscapes to offer clear alignment options.</p>
-                        <p class="lead-text" style="font-size: 0.95rem; color: var(--text-nebula-muted);">Currently operating at Salem Polyclinic Hospital (K N RAO Hospital) — 250, Omalur Main Rd, Salem, Tamil Nadu 636007.</p>
+                        <div class="cosmic-badge">Medical Rigor & Astronomical Perspective</div>
+                        <h3>Celestial Photography & Recognition</h3>
+                          <p class="lead-text">
+                            <strong>Dr. R. Ajith Kumar</strong> has transformed his profound passion for the night sky into a highly celebrated cosmic journey. Capturing the vast architecture of the universe through advanced telescope systems, this creative pursuit has built a vibrant, deeply engaged digital community of space enthusiasts. Widely recognized online for sharing striking deep-sky imagery, lunar details, and immersive stargazing logs that inspire thousands to look upward, his full exploratory gallery can be viewed directly on Instagram at <a href="https://www.instagram.com/dr_psycoma/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cosmic, #64ffda); text-decoration: underline; font-weight: 600;">@dr_psycoma</a>.
+                        </p>
+                         
+                          <div class="achievement-card">
+                            <span class="badge-certified">
+                              ✓ CERTIFIED OFFICIAL PARTICIPANT
+                            </span>
+                            <h3 class="achievement-title">Guinness World Records™ Achievement</h3>
+                            
+                            <p class="achievement-description">
+                                <strong>Dr. R. Ajith Kumar</strong> is officially recognized as a certified participant in the historic NBEMS national initiative that set the global record for the <strong>"Most viewers of an artificial intelligence in healthcare lesson live stream on YouTube."</strong> This milestone academic masterclass brought together a peak group of 17,999 medical professionals to master advanced clinical AI implementations and digital healthcare innovations.
+                              </p>
+                            
+                            <a href="https://www.guinnessworldrecords.com/world-records/782380-most-viewers-of-an-artificial-intelligence-in-healthcare-lesson-live-stream-on-yo" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-record">
+                              VIEW GUINNESS WORLD RECORD DETAILS
+                            </a>
+                          </div>
                     </div>
                 </div>
             </section>
@@ -399,7 +494,7 @@
                 <div style="width: 100%;">
                     <div class="cosmic-badge">Core Focus Dimensions</div>
                     <h2>Clinical Pathways & Specialization Systems</h2>
-                    <p class="lead-text">Approaching intricate micro-environments with calm, absolute observational methods.</p>
+                    <p class="lead-text">Acquired fundamental medical expertise during MBBS training at <strong>Sree Mookambika Institute Of Medical Sciences</strong> (Padanilam, Kulasekharam).Approaching intricate micro-environments with calm, absolute observational methods.</p>
                     
                     <div class="grid-layout">
                         <div class="card-nebula">
@@ -434,6 +529,9 @@
                     <a href="https://www.facebook.com/shivaji.raj.33" target="_blank" class="btn-brand btn-facebook">Facebook</a>
                     <a href="https://open.spotify.com/show/2zEF3zdnMq7hw4dN8g2Pvs?si=1387ecf1fdb54e2d" target="_blank" class="btn-brand btn-spotify">Spotify Podcast</a>
                     <a href="https://www.youtube.com/@dr_psycoma" target="_blank" class="btn-brand btn-youtube">YouTube Channel</a>
+                    <a href="https://www.linkedin.com/in/dr-r-ajith-kumar-b2346a274/" target="_blank" class="btn-brand btn-linkedin">LinkedIn</a>
+                    <a href="https://www.quora.com/profile/AJITH-KUMAR-R-46" target="_blank" class="btn-brand btn-quora">Quora</a>
+                    <a href="https://www.researchgate.net/profile/Raj_Ajith_Kumar" target="_blank" class="btn-brand btn-researchgate">ResearchGate</a>
                 </div>
             </section>
         </div>
