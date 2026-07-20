@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
+import './Home.css'
 
 export default function Home() {
   const { name, title, location, summary, credentials } = profile;
