@@ -30,7 +30,7 @@
 /* Floating Centered Island Navigation System */
 .navbar-container {
     position: fixed;
-    top: 14px;
+    top: 24px;
     left: 0;
     right: 0;
     display: flex;
@@ -146,16 +146,10 @@
 
 .section-wrapper {
     width: 100%;
-  
+    scroll-margin-top: 100px;
 }
 
-#hero-section { 
-  /* This ensures the padding always adjusts to the exact height of your fixed nav */
-  padding-top: var(--nav-height, 80px); 
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 40px;
-    background-color: transparent; }
+#hero-section { background-color: transparent; }
 
 /* Modular Presentation Slider Engine Layout Rules */
 #about-section { 

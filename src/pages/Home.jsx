@@ -22,6 +22,7 @@ export default function Home() {
             <Link to="/about" className="btn btn-secondary">
               View Career Profile
             </Link>
+            <ThemeToggle showLabel={true} className="hero-theme-toggle" />
           </div>
         </div>
         <div className="hero-aside">
@@ -39,13 +40,15 @@ export default function Home() {
               <strong>{location.city}</strong>, {location.state}
             </p>
             <p>{location.clinic}</p>
-         
+            <p className="theme-indicator-tag" style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--accent)' }}>
+              Current View Theme: <strong style={{ textTransform: 'capitalize' }}>{theme} Mode</strong>
+            </p>
           </div>
         </div>
       </section>
 
       <section className="section highlights">
-        <h2>Why Patients Choose {name}</h2>
+        <h2>Why Patients Choose {name.split(' ').slice(-1)[0]}</h2>
         <div className="card-grid">
           <article className="card">
             <h3>Surgical Training</h3>
