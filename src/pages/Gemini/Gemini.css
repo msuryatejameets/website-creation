@@ -19,9 +19,21 @@
     --brand-facebook: #1877f2;
     --brand-spotify: #1ed760;
     --brand-youtube: #ff0000;
+    --brand-linkedin: #0077b5;
+    --brand-quora: #b92b27;
+    --brand-researchgate: #00ccbb;
 }
 
-/* Base Traversal Configuration applied to layout */
+/* Base Resets & Layout Scoping */
+.portfolio-app,
+.portfolio-app *,
+.portfolio-app *::before,
+.portfolio-app *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .portfolio-app {
     font-family: var(--font-sans);
     color: var(--text-starlight);
@@ -70,7 +82,6 @@
     text-decoration: none;
 }
 
-/* Avatar Element - Fixed CSS Background Mapping */
 .nav-avatar {
     width: 36px;
     height: 36px;
@@ -133,11 +144,95 @@
 }
 
 #hero-section { background-color: transparent; }
+
+/* Modular Presentation Slider Engine Layout Rules */
 #about-section { 
     background-color: var(--bg-nebula-tint);
     border-top: 1px solid rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
 }
+
+.about-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.about-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateX(20px);
+}
+
+.about-slide.active-slide {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Equal-Height Side-by-Side Grid Setup */
+.slide-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: stretch;
+    width: 100%;
+    min-height: 480px;
+}
+
+/* Wrapper that holds the full image safely */
+.slide-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    max-height: 520px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 34, 56, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.slide-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Universal Navigation Controls Layout styling */
+.slide-controls-panel {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-slider {
+    background: rgba(26, 34, 56, 0.6);
+    border: 1px solid var(--island-border);
+    color: var(--text-pure);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-slider:hover {
+    background: var(--accent-cosmic);
+    transform: translateY(-1px);
+}
+
 #services-section { background-color: transparent; }
 #contact-section { 
     background-color: var(--bg-stellar-glow);
@@ -157,6 +252,7 @@
 /* Main Showcase Image Blocks */
 .image-container {
     position: relative;
+    height: 90%;
     width: 100%;
     aspect-ratio: 4 / 5;
     border-radius: 24px;
@@ -164,36 +260,6 @@
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.05);
     background: #0f172a url('../../assets/ajithphotos/gensurgery.jpg') center/cover no-repeat;
-}
-
-.layered-images {
-    position: relative;
-    width: 100%;
-    height: 480px;
-}
-
-.img-main {
-    width: 80%;
-    height: 85%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    background: #0f172a url('../../assets/ajithphotos/circleastro.jpg') center/cover no-repeat;
-}
-
-.img-offset {
-    width: 55%;
-    height: 60%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius: 20px;
-    border: 4px solid var(--bg-nebula-tint);
-    box-shadow: 0 30px 50px rgba(0,0,0,0.5);
-    background: #111827 url('../../assets/ajithphotos/grecord.jpg') center/cover no-repeat;
 }
 
 /* Typography Custom Elements */
@@ -213,7 +279,69 @@
     margin-bottom: 1.5rem;
 }
 
-h1 {
+/* Achievement Unified Card Format */
+.achievement-card {
+    border: 1px solid var(--accent-clinical, #00b4d8);
+    padding: 2.2rem;
+    border-radius: 16px;
+    background: rgba(11, 21, 40, 0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge-certified {
+    color: var(--accent-cosmic, #64ffda);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.achievement-title {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.achievement-description {
+    color: #b3c5ef;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.achievement-description strong {
+    color: #ffffff;
+}
+
+.btn-record {
+    background: var(--accent-cosmic, #64ffda);
+    color: #050b14;
+    width: max-content;
+    display: inline-flex;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-record:hover {
+    transform: scale(1.02);
+    background: #ffffff;
+}
+
+.portfolio-app h1 {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.15;
@@ -222,14 +350,14 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-h1 span {
+.portfolio-app h1 span {
     background: linear-gradient(to right, #ffffff, var(--accent-starlight));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-h2 {
+.portfolio-app h2 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -238,7 +366,7 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-h4 {
+.portfolio-app h4 {
     font-size: 1.1rem;
     color: var(--accent-starlight);
     font-weight: 500;
@@ -287,6 +415,9 @@ h4 {
 .btn-facebook { background: var(--brand-facebook); box-shadow: 0 4px 15px rgba(24, 119, 246, 0.25); }
 .btn-spotify { background: var(--brand-spotify); color: #000000; box-shadow: 0 4px 15px rgba(30, 215, 96, 0.25); }
 .btn-youtube { background: var(--brand-youtube); box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25); }
+.btn-linkedin { background: var(--brand-linkedin); box-shadow: 0 4px 15px rgba(0, 119, 181, 0.25); }
+.btn-quora { background: var(--brand-quora); box-shadow: 0 4px 15px rgba(185, 43, 39, 0.25); }
+.btn-researchgate { background: var(--brand-researchgate); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
 
 /* Grid Services Panels */
 .grid-layout {
@@ -303,16 +434,40 @@ h4 {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-nebula:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.05);
+}
+
+.card-nebula h3 {
+    color: var(--text-pure);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.card-nebula p {
+    color: var(--text-nebula-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
     .split-layout { grid-template-columns: 1fr; gap: 4rem; }
-    .image-container, .layered-images { max-width: 500px; margin: 0 auto; }
+    .image-container { max-width: 500px; margin: 0 auto; }
+    .slide-split-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .slide-image-container { height: 350px; }
 }
 
 @media (max-width: 768px) {
     .navbar-island { gap: 1.5rem; padding: 0.5rem 1rem; }
     .nav-links { display: none; }
     .section { padding: 120px 1.5rem 60px 1.5rem; }
-    h1 { font-size: 2.5rem; }
+    .portfolio-app h1 { font-size: 2.5rem; }
 }
+

@@ -1,4 +1,4 @@
-
+import circleastro from '../../assets/ajithphotos/circleastro.jpg';
 
 const Navbar = ({ activeSection }) => {
   const navItems = [
@@ -12,7 +12,9 @@ const Navbar = ({ activeSection }) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -100;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
@@ -24,7 +26,7 @@ const Navbar = ({ activeSection }) => {
           onClick={(e) => handleScroll(e, 'hero')} 
           className="nav-profile-block"
         >
-          <div className="nav-avatar"></div>
+          <div className="nav-avatar" style={{ backgroundImage: `url(${circleastro})` }}></div>
           <div className="nav-logo">Dr. R. Ajith Kumar<span>.</span></div>
         </a>
         <ul className="nav-links">
