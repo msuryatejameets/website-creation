@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 import ThemeToggle from '../components/ThemeToggle'
-import { useTheme } from '../context/ThemeContext'
 import { profile } from '../data/profile'
 
 export default function Home() {
-  const { name, title, location, summary, credentials } = profile
-  const { theme } = useTheme()
+  const { name, title, location, summary, credentials } = profile;
 
   return (
     <>
@@ -40,9 +38,6 @@ export default function Home() {
               <strong>{location.city}</strong>, {location.state}
             </p>
             <p>{location.clinic}</p>
-            <p className="theme-indicator-tag" style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--accent)' }}>
-              Current View Theme: <strong style={{ textTransform: 'capitalize' }}>{theme} Mode</strong>
-            </p>
           </div>
         </div>
       </section>
