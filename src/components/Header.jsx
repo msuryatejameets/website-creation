@@ -1,38 +1,26 @@
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { profile } from '../data/profile'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
   { to: '/achievements', label: 'Achievements' },
   { to: '/contact', label: 'Contact' },
+  { to: '/gemini', label: 'Cosmic View' },
 ]
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="site-header">
       <div className="header-inner">
-        <NavLink to="/" className="brand" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/" className="brand">
           <span className="brand-name">{profile.name}</span>
           <span className="brand-tagline">{profile.specialty}</span>
         </NavLink>
 
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <nav className={`site-nav${menuOpen ? ' is-open' : ''}`} aria-label="Main navigation">
+        <nav className={`site-nav`} aria-label="Main navigation">
           <ul>
             {navLinks.map(({ to, label, end }) => (
               <li key={to}>
@@ -40,7 +28,6 @@ export default function Header() {
                   to={to}
                   end={end}
                   className={({ isActive }) => (isActive ? 'active' : undefined)}
-                  onClick={() => setMenuOpen(false)}
                 >
                   {label}
                 </NavLink>
@@ -48,6 +35,10 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+
+        <div className="header-actions">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )

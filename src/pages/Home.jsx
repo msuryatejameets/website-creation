@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
+import ThemeToggle from '../components/ThemeToggle'
+import { useTheme } from '../context/ThemeContext'
 import { profile } from '../data/profile'
 
 export default function Home() {
-  const { name, title, specialty, location, summary, credentials } = profile
+  const { name, title, location, summary, credentials } = profile
+  const { theme } = useTheme()
 
   const pageTitle = `${name} – General Surgery Resident in ${location.city} | Aspiring Neurosurgeon`
   const pageDescription = `${name} is a junior resident in General Surgery in ${location.city}, ${location.country}, with a dedicated focus on neurosurgery. View career profile, achievements, and contact details.`
@@ -30,6 +33,7 @@ export default function Home() {
             <Link to="/about" className="btn btn-secondary">
               View Career Profile
             </Link>
+            <ThemeToggle showLabel={true} className="hero-theme-toggle" />
           </div>
         </div>
         <div className="hero-aside">
@@ -42,11 +46,14 @@ export default function Home() {
             </ul>
           </div>
           <div className="info-card accent">
-            <h2>Hospital Affiliation</h2>
+            <h2>Hospital Affiliation & Mode</h2>
             <p>
               <strong>{location.city}</strong>, {location.state}
             </p>
             <p>{location.clinic}</p>
+            <p className="theme-indicator-tag" style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--accent)' }}>
+              Current View Theme: <strong style={{ textTransform: 'capitalize' }}>{theme} Mode</strong>
+            </p>
           </div>
         </div>
       </section>

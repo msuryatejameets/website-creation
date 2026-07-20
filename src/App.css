@@ -33,6 +33,13 @@
   gap: 1rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
 .brand {
   display: flex;
   flex-direction: column;

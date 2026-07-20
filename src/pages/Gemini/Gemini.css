@@ -1,107 +1,5 @@
-/* Modern Celestial & Reassurance Design System Tokens */
-:root,
-.portfolio-app[data-theme="dark"] {
-    --bg-deep-space: #0b0f19;
-    --bg-nebula-tint: #111827;
-    --bg-stellar-glow: #1a2238;
+/* Celestial Design System Tokens are centralized in src/index.css */
 
-    --text-pure: #ffffff;
-    --text-starlight: #e2e8f0;
-    --text-nebula-muted: #94a3b8;
-
-    --accent-cosmic: #6366f1;
-    --accent-cosmic-hover: #818cf8;
-    --accent-starlight: #38bdf8;
-
-    --island-bg: rgba(11, 15, 25, 0.9);
-    --island-border: rgba(56, 189, 248, 0.25);
-
-    --card-bg: #0f172a;
-    --card-border: rgba(56, 189, 248, 0.25);
-    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.08);
-
-    --achievement-card-bg: #0f172a;
-    --achievement-card-border: rgba(56, 189, 248, 0.3);
-    --achievement-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.1);
-
-    --grid-card-bg: rgba(26, 34, 56, 0.5);
-    --grid-card-border: rgba(255, 255, 255, 0.05);
-
-    --badge-bg: rgba(56, 189, 248, 0.08);
-    --badge-border: rgba(56, 189, 248, 0.25);
-
-    --btn-slider-bg: rgba(30, 41, 59, 0.8);
-    --btn-slider-border: rgba(56, 189, 248, 0.3);
-    --btn-slider-text: #ffffff;
-
-    --btn-record-bg: #6366f1;
-    --btn-record-hover: #818cf8;
-    --btn-record-text: #ffffff;
-
-    --heading-gradient: linear-gradient(to right, #ffffff, #38bdf8);
-
-    --radial-glow-1: rgba(99, 102, 241, 0.05);
-    --radial-glow-2: rgba(56, 189, 248, 0.05);
-    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-    /* Social Brand Colors */
-    --brand-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    --brand-x: #000000;
-    --brand-blogspot: #ff5722;
-    --brand-facebook: #1877f2;
-    --brand-spotify: #1ed760;
-    --brand-youtube: #ff0000;
-    --brand-linkedin: #0077b5;
-    --brand-quora: #b92b27;
-    --brand-researchgate: #00ccbb;
-}
-
-/* Light Theme Variables Overrides */
-.portfolio-app[data-theme="light"],
-[data-theme="light"] .portfolio-app,
-html[data-theme="light"] body {
-    --bg-deep-space: #f8fafc;
-    --bg-nebula-tint: #f1f5f9;
-    --bg-stellar-glow: #e2e8f0;
-
-    --text-pure: #0f172a;
-    --text-starlight: #1e293b;
-    --text-nebula-muted: #334155;
-
-    --accent-cosmic: #4f46e5;
-    --accent-cosmic-hover: #4338ca;
-    --accent-starlight: #0284c7;
-
-    --island-bg: rgba(255, 255, 255, 0.94);
-    --island-border: rgba(2, 132, 199, 0.3);
-
-    --card-bg: #ffffff;
-    --card-border: rgba(2, 132, 199, 0.2);
-    --card-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-
-    --achievement-card-bg: #ffffff;
-    --achievement-card-border: rgba(2, 132, 199, 0.3);
-    --achievement-card-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
-
-    --grid-card-bg: #ffffff;
-    --grid-card-border: rgba(2, 132, 199, 0.15);
-
-    --badge-bg: rgba(2, 132, 199, 0.1);
-    --badge-border: rgba(2, 132, 199, 0.3);
-
-    --btn-slider-bg: #ffffff;
-    --btn-slider-border: rgba(2, 132, 199, 0.35);
-    --btn-slider-text: #0f172a;
-
-    --btn-record-bg: #4f46e5;
-    --btn-record-hover: #4338ca;
-    --btn-record-text: #ffffff;
-
-    --heading-gradient: linear-gradient(to right, #0f172a, #0284c7);
-
-    --radial-glow-1: rgba(79, 70, 229, 0.08);
-    --radial-glow-2: rgba(2, 132, 199, 0.08);
-}
 
 /* Base Resets & Layout Scoping */
 .portfolio-app,
@@ -126,6 +24,7 @@ html[data-theme="light"] body {
         radial-gradient(circle at 80% 70%, var(--radial-glow-2) 0%, transparent 40%);
     background-attachment: fixed;
     transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0 20px 20px 20px;
 }
 
 /* Floating Centered Island Navigation System */
