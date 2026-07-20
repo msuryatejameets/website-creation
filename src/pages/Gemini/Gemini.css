@@ -488,6 +488,43 @@
     transition: color 0.3s ease;
 }
 
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid var(--island-border);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: var(--text-pure);
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobile-nav-toggle.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
 @media (max-width: 1024px) {
     .split-layout { grid-template-columns: 1fr; gap: 4rem; }
     .image-container { max-width: 500px; margin: 0 auto; }
@@ -496,9 +533,60 @@
 }
 
 @media (max-width: 768px) {
-    .navbar-island { gap: 1rem; padding: 0.5rem 1rem; }
-    .nav-links { display: none; }
-    .section { padding: 120px 1.5rem 60px 1.5rem; }
-    .portfolio-app h1 { font-size: 2.5rem; }
-    #contact-section { padding: 2.5rem 1.5rem; }
-}
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .navbar-container {
+        padding: 0 0.75rem;
+        top: 16px;
+    }
+
+    .navbar-island {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        position: relative;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        background-color: var(--island-bg);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--island-border);
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.25rem 1.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.25s ease;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        display: block;
+    }
+
+    .section { padding: 100px 1.25rem 50px 1.25rem; }
+    .portfolio-app h1 { font-size: 2.1rem; line-height: 1.2; }
+    #contact-section { padding: 2rem 1.25rem; }
+    .social-button-matrix { gap: 0.75rem; }
+    .btn-brand { width: 100%; justify-content: center; }
+}

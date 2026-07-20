@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { profile } from '../../data/profile';
 import ThemeToggle from '../../components/ThemeToggle';
 
 const Navbar = ({ activeSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const avatarImage = profile.gemini?.aboutSlides[0]?.image;
   const doctorName = profile.gemini?.hero?.doctorName || profile.name;
 
@@ -14,6 +16,7 @@ const Navbar = ({ activeSection }) => {
 
   const handleScroll = (e, id) => {
     e.preventDefault();
+    setIsMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       const yOffset = -100;
@@ -21,6 +24,8 @@ const Navbar = ({ activeSection }) => {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <div className="navbar-container">
@@ -33,7 +38,8 @@ const Navbar = ({ activeSection }) => {
           <div className="nav-avatar" style={{ backgroundImage: `url(${avatarImage})` }}></div>
           <div className="nav-logo">{doctorName}<span>.</span></div>
         </a>
-        <ul className="nav-links">
+
+        <ul className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
           {navItems.map((item) => (
             <li key={item.id}>
               <a
@@ -49,6 +55,18 @@ const Navbar = ({ activeSection }) => {
 
         {/* Global Reusable Theme Switcher Toggle Button */}
         <ThemeToggle />
+
+        {/* Mobile Hamburger Toggle Button */}
+        <button
+          className={`mobile-nav-toggle ${isMenuOpen ? 'is-open' : ''}`}
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle cosmic navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </div>
   );
