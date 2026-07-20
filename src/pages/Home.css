@@ -1,9 +1,7 @@
-.homeComponent {
-  .site {
-    display: flex;
-    flex-direction: column;
-    min-height: 100svh;
-  }
+.mainLayoutComponent {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
 
   .site-main {
     flex: 1;
