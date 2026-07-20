@@ -5,7 +5,7 @@ export default function Home() {
   const { name, title, location, summary, credentials } = profile;
 
   return (
-    <>
+    <div className='homeComponent'>
       <section className="hero">
         <div className="hero-content">
           <p className="eyebrow">{location.clinic}</p>
@@ -66,6 +66,6 @@ export default function Home() {
           </article>
         </div>
       </section>
-    </>
+    </div>
   )
 }
