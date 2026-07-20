@@ -1,21 +1,10 @@
-import Seo from '../components/Seo'
 import { profile } from '../data/profile'
 
 export default function Achievements() {
-  const { name, specialty, location, achievements, memberships, seo } = profile
-
-  const pageTitle = `${name} – Achievements & Awards | ${specialty}`
-  const pageDescription = `Explore the professional achievements, awards, fellowships, and publications of ${name}, ${specialty.toLowerCase()} in ${location.city}.`
+  const { achievements, memberships } = profile
 
   return (
     <>
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        path="/achievements"
-        keywords={[...seo.defaultKeywords, 'awards', 'fellowship', 'publications', 'certifications'].join(', ')}
-      />
-
       <section className="page-header">
         <h1>Achievements & Recognition</h1>
         <p className="page-subtitle">

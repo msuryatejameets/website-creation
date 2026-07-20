@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Seo from '../components/Seo'
 import ThemeToggle from '../components/ThemeToggle'
 import { useTheme } from '../context/ThemeContext'
 import { profile } from '../data/profile'
@@ -8,18 +7,8 @@ export default function Home() {
   const { name, title, location, summary, credentials } = profile
   const { theme } = useTheme()
 
-  const pageTitle = `${name} – General Surgery Resident in ${location.city} | Aspiring Neurosurgeon`
-  const pageDescription = `${name} is a junior resident in General Surgery in ${location.city}, ${location.country}, with a dedicated focus on neurosurgery. View career profile, achievements, and contact details.`
-
   return (
     <>
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        path="/"
-        schemaType="physician"
-      />
-
       <section className="hero">
         <div className="hero-content">
           <p className="eyebrow">{location.clinic}</p>

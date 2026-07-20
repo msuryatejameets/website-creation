@@ -1,7 +1,10 @@
-import circleastro from '../../assets/ajithphotos/circleastro.jpg';
+import { profile } from '../../data/profile';
 import ThemeToggle from '../../components/ThemeToggle';
 
 const Navbar = ({ activeSection }) => {
+  const avatarImage = profile.gemini?.aboutSlides[0]?.image;
+  const doctorName = profile.gemini?.hero?.doctorName || profile.name;
+
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'Background' },
@@ -27,8 +30,8 @@ const Navbar = ({ activeSection }) => {
           onClick={(e) => handleScroll(e, 'hero')} 
           className="nav-profile-block"
         >
-          <div className="nav-avatar" style={{ backgroundImage: `url(${circleastro})` }}></div>
-          <div className="nav-logo">Dr. R. Ajith Kumar<span>.</span></div>
+          <div className="nav-avatar" style={{ backgroundImage: `url(${avatarImage})` }}></div>
+          <div className="nav-logo">{doctorName}<span>.</span></div>
         </a>
         <ul className="nav-links">
           {navItems.map((item) => (
