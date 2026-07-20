@@ -30,7 +30,7 @@
 /* Floating Centered Island Navigation System */
 .navbar-container {
     position: fixed;
-    top: 24px;
+    top: 14px;
     left: 0;
     right: 0;
     display: flex;
@@ -146,10 +146,16 @@
 
 .section-wrapper {
     width: 100%;
-    scroll-margin-top: 100px;
+  
 }
 
-#hero-section { background-color: transparent; }
+#hero-section { 
+  /* This ensures the padding always adjusts to the exact height of your fixed nav */
+  padding-top: var(--nav-height, 80px); 
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 40px;
+    background-color: transparent; }
 
 /* Modular Presentation Slider Engine Layout Rules */
 #about-section { 
@@ -589,4 +595,4 @@
     #contact-section { padding: 2rem 1.25rem; }
     .social-button-matrix { gap: 0.75rem; }
     .btn-brand { width: 100%; justify-content: center; }
-}
+}
