@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import ThemeToggle from '../components/ThemeToggle'
 import { profile } from '../data/profile'
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
             <Link to="/about" className="btn btn-secondary">
               View Career Profile
             </Link>
-            <ThemeToggle showLabel={true} className="hero-theme-toggle" />
           </div>
         </div>
         <div className="hero-aside">

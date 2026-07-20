@@ -8,7 +8,7 @@ export const profile = {
   specialty: 'General Surgery (Junior Resident)',
   location: {
     city: ' Salem',
-    state: 'Tamil Nadu',
+    state: 'Maharashtra',
     country: 'India',
     clinic: 'Salem Poly Clinic Hospital – Department of General Surgery',
   },
@@ -16,8 +16,8 @@ export const profile = {
     'Dr. Ajith Kumar R is a junior resident in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
   credentials: [
     'MBBS – All India Institute of Medical Sciences',
-    'DNB (General Surgery) – In progress, Salem Poly Clinic  Hospital',
-    'Guinness World Record Certified Participant',
+    'MS (General Surgery) – In progress, Salem Poly Clinic  Hospital',
+    'Advanced Cardiac Life Support (ACLS) Certified',
     'Basic Life Support (BLS) Instructor',
     'Research training in neurosurgical outcomes and trauma care',
   ],
