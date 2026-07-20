@@ -41,7 +41,7 @@ export default function Home() {
       </section>
 
       <section className="section highlights">
-        <h2>Why Patients Choose {name.split(' ').slice(-1)[0]}</h2>
+        <h2>Why Patients Choose <br></br> {name}</h2>
         <div className="card-grid">
           <article className="card">
             <h3>Surgical Training</h3>
