@@ -1,22 +1,14 @@
 import { Link } from 'react-router-dom'
-import Seo from '../components/Seo'
+import ThemeToggle from '../components/ThemeToggle'
+import { useTheme } from '../context/ThemeContext'
 import { profile } from '../data/profile'
 
 export default function Home() {
-  const { name, title, specialty, location, summary, credentials } = profile
-
-  const pageTitle = `${name} – General Surgery Resident in ${location.city} | Aspiring Neurosurgeon`
-  const pageDescription = `${name} is a junior resident in General Surgery in ${location.city}, ${location.country}, with a dedicated focus on neurosurgery. View career profile, achievements, and contact details.`
+  const { name, title, location, summary, credentials } = profile
+  const { theme } = useTheme()
 
   return (
     <>
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        path="/"
-        schemaType="physician"
-      />
-
       <section className="hero">
         <div className="hero-content">
           <p className="eyebrow">{location.clinic}</p>
@@ -42,17 +34,18 @@ export default function Home() {
             </ul>
           </div>
           <div className="info-card accent">
-            <h2>Hospital Affiliation</h2>
+            <h2>Hospital Affiliation & Mode</h2>
             <p>
               <strong>{location.city}</strong>, {location.state}
             </p>
             <p>{location.clinic}</p>
+         
           </div>
         </div>
       </section>
 
       <section className="section highlights">
-        <h2>Why Patients Choose {name.split(' ').slice(-1)[0]}</h2>
+        <h2>Why Patients Choose {name}</h2>
         <div className="card-grid">
           <article className="card">
             <h3>Surgical Training</h3>

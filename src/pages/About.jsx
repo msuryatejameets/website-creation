@@ -1,22 +1,11 @@
-import Seo from '../components/Seo'
 import { profile } from '../data/profile'
 
 export default function About() {
   const { name, title, specialty, location, summary, credentials, experience, education, personal } =
     profile
 
-  const pageTitle = `${name} – About | ${specialty} in ${location.city}`
-  const pageDescription = `Learn about ${name}, a ${specialty.toLowerCase()} in ${location.city}. Career summary, medical education, hospital affiliations, and professional background.`
-
   return (
     <>
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        path="/about"
-        schemaType="physician"
-      />
-
       <section className="page-header">
         <h1>About {name}</h1>
         <p className="page-subtitle">{title}</p>

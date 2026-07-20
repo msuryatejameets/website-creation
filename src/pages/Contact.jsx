@@ -1,21 +1,10 @@
-import Seo from '../components/Seo'
 import { profile } from '../data/profile'
 
 export default function Contact() {
-  const { name, specialty, location, contact, social } = profile
-
-  const pageTitle = `Contact ${name} | ${specialty} in ${location.city}`
-  const pageDescription = `Contact ${name} at ${location.clinic}, ${location.city}. Phone: ${contact.phone}. Hospital duty hours and department address.`
+  const { location, contact, social } = profile
 
   return (
     <>
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        path="/contact"
-        schemaType="business"
-      />
-
       <section className="page-header">
         <h1>Contact</h1>
         <p className="page-subtitle">
