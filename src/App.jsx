@@ -5,14 +5,14 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
-import Gemini from './pages/Gemini/Gemini'
+import Gemini from './pages/Gemini/GeminiHome'
 import Seo from './components/Seo'
 import { profile } from './data/profile'
 import './App.css'
 
 function CentralSeo() {
   const location = useLocation()
-  const { name, title, specialty, location: profLoc, summary, contact, seo, gemini } = profile
+  const { name, specialty, location: profLoc, summary, contact, seo, gemini } = profile
 
   const getSeoProps = (pathname) => {
     switch (pathname) {
