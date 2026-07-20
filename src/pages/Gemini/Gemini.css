@@ -4,17 +4,42 @@
     --bg-deep-space: #0b0f19;
     --bg-nebula-tint: #111827;
     --bg-stellar-glow: #1a2238;
+
     --text-pure: #ffffff;
     --text-starlight: #e2e8f0;
     --text-nebula-muted: #94a3b8;
+
     --accent-cosmic: #6366f1;
+    --accent-cosmic-hover: #818cf8;
     --accent-starlight: #38bdf8;
+
     --island-bg: rgba(11, 15, 25, 0.9);
     --island-border: rgba(56, 189, 248, 0.25);
-    --card-bg: rgba(26, 34, 56, 0.4);
-    --card-border: rgba(255, 255, 255, 0.04);
-    --achievement-card-bg: rgba(11, 21, 40, 0.5);
+
+    --card-bg: #0f172a;
+    --card-border: rgba(56, 189, 248, 0.25);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.08);
+
+    --achievement-card-bg: #0f172a;
+    --achievement-card-border: rgba(56, 189, 248, 0.3);
+    --achievement-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.1);
+
+    --grid-card-bg: rgba(26, 34, 56, 0.5);
+    --grid-card-border: rgba(255, 255, 255, 0.05);
+
     --badge-bg: rgba(56, 189, 248, 0.08);
+    --badge-border: rgba(56, 189, 248, 0.25);
+
+    --btn-slider-bg: rgba(30, 41, 59, 0.8);
+    --btn-slider-border: rgba(56, 189, 248, 0.3);
+    --btn-slider-text: #ffffff;
+
+    --btn-record-bg: #6366f1;
+    --btn-record-hover: #818cf8;
+    --btn-record-text: #ffffff;
+
+    --heading-gradient: linear-gradient(to right, #ffffff, #38bdf8);
+
     --radial-glow-1: rgba(99, 102, 241, 0.05);
     --radial-glow-2: rgba(56, 189, 248, 0.05);
     --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -38,21 +63,45 @@ html[data-theme="light"] body {
     --bg-deep-space: #f8fafc;
     --bg-nebula-tint: #f1f5f9;
     --bg-stellar-glow: #e2e8f0;
+
     --text-pure: #0f172a;
     --text-starlight: #1e293b;
-    --text-nebula-muted: #475569;
+    --text-nebula-muted: #334155;
+
     --accent-cosmic: #4f46e5;
+    --accent-cosmic-hover: #4338ca;
     --accent-starlight: #0284c7;
+
     --island-bg: rgba(255, 255, 255, 0.94);
     --island-border: rgba(2, 132, 199, 0.3);
+
     --card-bg: #ffffff;
-    --card-border: rgba(2, 132, 199, 0.18);
+    --card-border: rgba(2, 132, 199, 0.2);
+    --card-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+
     --achievement-card-bg: #ffffff;
+    --achievement-card-border: rgba(2, 132, 199, 0.3);
+    --achievement-card-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+
+    --grid-card-bg: #ffffff;
+    --grid-card-border: rgba(2, 132, 199, 0.15);
+
     --badge-bg: rgba(2, 132, 199, 0.1);
+    --badge-border: rgba(2, 132, 199, 0.3);
+
+    --btn-slider-bg: #ffffff;
+    --btn-slider-border: rgba(2, 132, 199, 0.35);
+    --btn-slider-text: #0f172a;
+
+    --btn-record-bg: #4f46e5;
+    --btn-record-hover: #4338ca;
+    --btn-record-text: #ffffff;
+
+    --heading-gradient: linear-gradient(to right, #0f172a, #0284c7);
+
     --radial-glow-1: rgba(79, 70, 229, 0.08);
     --radial-glow-2: rgba(2, 132, 199, 0.08);
 }
-
 
 /* Base Resets & Layout Scoping */
 .portfolio-app,
@@ -130,6 +179,7 @@ html[data-theme="light"] body {
     font-weight: 700;
     letter-spacing: -0.025em;
     color: var(--text-pure);
+    transition: color 0.3s ease;
 }
 
 .nav-logo span {
@@ -208,7 +258,7 @@ html[data-theme="light"] body {
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
     overflow: hidden;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .about-slider-wrapper {
@@ -257,9 +307,10 @@ html[data-theme="light"] body {
     background: var(--card-bg);
     border-radius: 20px;
     border: 1px solid var(--card-border);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
     padding: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .slide-image-container img {
@@ -277,9 +328,9 @@ html[data-theme="light"] body {
 }
 
 .btn-slider {
-    background: var(--card-bg);
-    border: 1px solid var(--island-border);
-    color: var(--text-pure);
+    background: var(--btn-slider-bg);
+    border: 1px solid var(--btn-slider-border);
+    color: var(--btn-slider-text);
     padding: 0.5rem 1.25rem;
     border-radius: 9999px;
     cursor: pointer;
@@ -291,7 +342,8 @@ html[data-theme="light"] body {
 .btn-slider:hover {
     background: var(--accent-cosmic);
     color: #ffffff;
-    transform: translateY(-1px);
+    border-color: var(--accent-cosmic);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
 }
 
 #services-section { background-color: transparent; }
@@ -320,9 +372,10 @@ html[data-theme="light"] body {
     aspect-ratio: 4 / 5;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.15);
+    box-shadow: var(--card-shadow);
     border: 1px solid var(--card-border);
     background: #0f172a url('../../assets/ajithphotos/gensurgery.jpg') center/cover no-repeat;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Typography Custom Elements */
@@ -332,7 +385,7 @@ html[data-theme="light"] body {
     gap: 0.6rem;
     padding: 0.45rem 1.15rem;
     background-color: var(--badge-bg);
-    border: 1px solid var(--island-border);
+    border: 1px solid var(--badge-border);
     color: var(--accent-starlight);
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -340,21 +393,22 @@ html[data-theme="light"] body {
     text-transform: uppercase;
     letter-spacing: 0.075em;
     margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* Achievement Unified Card Format */
 .achievement-card {
-    border: 1px solid var(--accent-starlight);
+    border: 1px solid var(--achievement-card-border);
     padding: 2.5rem 2.25rem;
     border-radius: 20px;
     background: var(--achievement-card-bg);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--achievement-card-shadow);
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     backdrop-filter: blur(12px);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .badge-certified {
@@ -365,6 +419,7 @@ html[data-theme="light"] body {
     display: block;
     margin-bottom: 0.75rem;
     font-size: 0.85rem;
+    transition: color 0.3s ease;
 }
 
 .achievement-title {
@@ -373,6 +428,7 @@ html[data-theme="light"] body {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
 .achievement-description {
@@ -380,15 +436,17 @@ html[data-theme="light"] body {
     line-height: 1.65;
     margin-bottom: 1.75rem;
     font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .achievement-description strong {
     color: var(--text-pure);
+    transition: color 0.3s ease;
 }
 
 .btn-record {
-    background: var(--accent-cosmic);
-    color: #ffffff;
+    background: var(--btn-record-bg);
+    color: var(--btn-record-text);
     width: max-content;
     display: inline-flex;
     text-transform: uppercase;
@@ -402,8 +460,9 @@ html[data-theme="light"] body {
 }
 
 .btn-record:hover {
+    background: var(--btn-record-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
 }
 
 .portfolio-app h1 {
@@ -413,13 +472,16 @@ html[data-theme="light"] body {
     letter-spacing: -0.03em;
     color: var(--text-pure);
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
 }
 
-.portfolio-app h1 span {
-    background: linear-gradient(to right, var(--text-pure), var(--accent-starlight));
+.portfolio-app h1 span,
+.achievement-card h1 span {
+    background: var(--heading-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease;
 }
 
 .portfolio-app h2 {
@@ -429,6 +491,7 @@ html[data-theme="light"] body {
     letter-spacing: -0.02em;
     color: var(--text-pure);
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 .portfolio-app h4 {
@@ -436,12 +499,14 @@ html[data-theme="light"] body {
     color: var(--accent-starlight);
     font-weight: 500;
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
 }
 
 .lead-text {
     font-size: 1.15rem;
     color: var(--text-nebula-muted);
     margin-bottom: 2rem;
+    transition: color 0.3s ease;
 }
 
 /* Branded Channel Button Layouts */
@@ -494,10 +559,10 @@ html[data-theme="light"] body {
 }
 
 .card-nebula {
-    background: var(--card-bg);
+    background: var(--grid-card-bg);
     padding: 2.5rem 2rem;
     border-radius: 20px;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--grid-card-border);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -514,12 +579,14 @@ html[data-theme="light"] body {
     font-weight: 700;
     margin-bottom: 0.85rem;
     letter-spacing: -0.01em;
+    transition: color 0.3s ease;
 }
 
 .card-nebula p {
     color: var(--text-nebula-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 @media (max-width: 1024px) {
@@ -536,166 +603,3 @@ html[data-theme="light"] body {
     .portfolio-app h1 { font-size: 2.5rem; }
     #contact-section { padding: 2.5rem 1.5rem; }
 }
-
-/* ==========================================================================
-   EXPLICIT DARK MODE STYLES FOR SLIDES & CARDS
-   ========================================================================== */
-.portfolio-app[data-theme="dark"] #about-section {
-    background-color: #111827;
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.portfolio-app[data-theme="dark"] .slide-image-container {
-    background: #0f172a;
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.08);
-}
-
-.portfolio-app[data-theme="dark"] .achievement-card {
-    background: #0f172a;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.1);
-}
-
-.portfolio-app[data-theme="dark"] .badge-certified {
-    color: #38bdf8;
-}
-
-.portfolio-app[data-theme="dark"] .achievement-title,
-.portfolio-app[data-theme="dark"] .achievement-card h1 {
-    color: #ffffff;
-}
-
-.portfolio-app[data-theme="dark"] .achievement-card h1 span {
-    background: linear-gradient(to right, #ffffff, #38bdf8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.portfolio-app[data-theme="dark"] .achievement-description {
-    color: #94a3b8;
-}
-
-.portfolio-app[data-theme="dark"] .achievement-description strong {
-    color: #ffffff;
-}
-
-.portfolio-app[data-theme="dark"] .btn-slider {
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    color: #ffffff;
-}
-
-.portfolio-app[data-theme="dark"] .btn-slider:hover {
-    background: #6366f1;
-    color: #ffffff;
-    border-color: #6366f1;
-    box-shadow: 0 0 16px rgba(99, 102, 241, 0.4);
-}
-
-.portfolio-app[data-theme="dark"] .btn-record {
-    background: #6366f1;
-    color: #ffffff;
-}
-
-.portfolio-app[data-theme="dark"] .btn-record:hover {
-    background: #818cf8;
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
-}
-
-.portfolio-app[data-theme="dark"] .card-nebula {
-    background: rgba(26, 34, 56, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* ==========================================================================
-   EXPLICIT LIGHT MODE STYLES FOR SLIDES & CARDS
-   ========================================================================== */
-.portfolio-app[data-theme="light"] #about-section {
-    background-color: #f1f5f9;
-    border-color: rgba(2, 132, 199, 0.15);
-}
-
-.portfolio-app[data-theme="light"] .slide-image-container {
-    background: #ffffff;
-    border: 1px solid rgba(2, 132, 199, 0.2);
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-}
-
-.portfolio-app[data-theme="light"] .achievement-card {
-    background: #ffffff;
-    border: 1px solid rgba(2, 132, 199, 0.3);
-    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
-}
-
-.portfolio-app[data-theme="light"] .badge-certified {
-    color: #0284c7;
-}
-
-.portfolio-app[data-theme="light"] .achievement-title,
-.portfolio-app[data-theme="light"] .achievement-card h1 {
-    color: #0f172a;
-}
-
-.portfolio-app[data-theme="light"] .achievement-card h1 span {
-    background: linear-gradient(to right, #0f172a, #0284c7);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.portfolio-app[data-theme="light"] .achievement-description {
-    color: #334155;
-}
-
-.portfolio-app[data-theme="light"] .achievement-description strong {
-    color: #0f172a;
-}
-
-.portfolio-app[data-theme="light"] .btn-slider {
-    background: #ffffff;
-    border: 1px solid rgba(2, 132, 199, 0.35);
-    color: #0f172a;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-}
-
-.portfolio-app[data-theme="light"] .btn-slider:hover {
-    background: #4f46e5;
-    color: #ffffff;
-    border-color: #4f46e5;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
-}
-
-.portfolio-app[data-theme="light"] .btn-record {
-    background: #4f46e5;
-    color: #ffffff;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
-}
-
-.portfolio-app[data-theme="light"] .btn-record:hover {
-    background: #4338ca;
-    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
-}
-
-.portfolio-app[data-theme="light"] .card-nebula {
-    background: #ffffff;
-    border: 1px solid rgba(2, 132, 199, 0.15);
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-}
-
-.portfolio-app[data-theme="light"] .card-nebula h3 {
-    color: #0f172a;
-}
-
-.portfolio-app[data-theme="light"] .card-nebula p {
-    color: #334155;
-}
-
-.portfolio-app[data-theme="light"] #contact-section {
-    background-color: #e2e8f0;
-}
-
-
-
-
