@@ -9,7 +9,18 @@ import grecord from '../../assets/ajithphotos/grecord.jpg';
 function Gemini() {
   const [activeSection, setActiveSection] = useState('hero');
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('gemini_theme') || 'dark';
+  });
+  
   const totalSlides = 2;
+
+  useEffect(() => {
+    localStorage.setItem('gemini_theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
 
   useEffect(() => {
     const sections = document.querySelectorAll('.section-wrapper');
@@ -34,6 +45,10 @@ function Gemini() {
     return () => observer.disconnect();
   }, []);
 
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   const nextSlide = () => {
     setActiveSlideIndex((prev) => (prev + 1) % totalSlides);
   };
@@ -43,8 +58,12 @@ function Gemini() {
   };
 
   return (
-    <div className="portfolio-app">
-      <Navbar activeSection={activeSection} />
+    <div className="portfolio-app" data-theme={theme}>
+      <Navbar 
+        activeSection={activeSection} 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+      />
 
       <main>
         {/* Hero Section Canvas */}
@@ -204,4 +223,5 @@ function Gemini() {
 }
 
 export default Gemini;
+
 

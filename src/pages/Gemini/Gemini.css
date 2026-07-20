@@ -1,5 +1,6 @@
 /* Modern Celestial & Reassurance Design System Tokens */
-:root {
+:root,
+.portfolio-app[data-theme="dark"] {
     --bg-deep-space: #0b0f19;
     --bg-nebula-tint: #111827;
     --bg-stellar-glow: #1a2238;
@@ -10,6 +11,12 @@
     --accent-starlight: #38bdf8;
     --island-bg: rgba(11, 15, 25, 0.9);
     --island-border: rgba(56, 189, 248, 0.25);
+    --card-bg: rgba(26, 34, 56, 0.4);
+    --card-border: rgba(255, 255, 255, 0.04);
+    --achievement-card-bg: rgba(11, 21, 40, 0.5);
+    --badge-bg: rgba(56, 189, 248, 0.08);
+    --radial-glow-1: rgba(99, 102, 241, 0.05);
+    --radial-glow-2: rgba(56, 189, 248, 0.05);
     --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* Social Brand Colors */
@@ -23,6 +30,29 @@
     --brand-quora: #b92b27;
     --brand-researchgate: #00ccbb;
 }
+
+/* Light Theme Variables Overrides */
+.portfolio-app[data-theme="light"],
+[data-theme="light"] .portfolio-app,
+html[data-theme="light"] body {
+    --bg-deep-space: #f8fafc;
+    --bg-nebula-tint: #f1f5f9;
+    --bg-stellar-glow: #e2e8f0;
+    --text-pure: #0f172a;
+    --text-starlight: #1e293b;
+    --text-nebula-muted: #475569;
+    --accent-cosmic: #4f46e5;
+    --accent-starlight: #0284c7;
+    --island-bg: rgba(255, 255, 255, 0.94);
+    --island-border: rgba(2, 132, 199, 0.3);
+    --card-bg: #ffffff;
+    --card-border: rgba(2, 132, 199, 0.18);
+    --achievement-card-bg: #ffffff;
+    --badge-bg: rgba(2, 132, 199, 0.1);
+    --radial-glow-1: rgba(79, 70, 229, 0.08);
+    --radial-glow-2: rgba(2, 132, 199, 0.08);
+}
+
 
 /* Base Resets & Layout Scoping */
 .portfolio-app,
@@ -43,9 +73,10 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, var(--radial-glow-1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--radial-glow-2) 0%, transparent 40%);
     background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Floating Centered Island Navigation System */
@@ -59,6 +90,7 @@
     z-index: 1000;
     width: 100%;
     pointer-events: none;
+    padding: 0 1rem;
 }
 
 .navbar-island {
@@ -67,12 +99,13 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--island-border);
-    padding: 0.5rem 2rem 0.5rem 1rem;
+    padding: 0.625rem 1.5rem 0.625rem 1rem;
     border-radius: 9999px;
     display: flex;
     align-items: center;
-    gap: 3.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.1);
+    gap: 2.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 20px rgba(56, 189, 248, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-profile-block {
@@ -105,8 +138,9 @@
 
 .nav-links {
     display: flex;
-    gap: 2.25rem;
+    gap: 1.75rem;
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
@@ -124,7 +158,30 @@
 .nav-link.active {
     color: var(--accent-starlight);
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: var(--badge-bg);
+    border: 1px solid var(--island-border);
+    color: var(--text-pure);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--accent-cosmic);
+    color: #ffffff;
+    transform: scale(1.08) rotate(15deg);
+    box-shadow: 0 0 12px var(--accent-cosmic);
 }
 
 /* Layout Architecture & Content Canvas Blocks */
@@ -148,9 +205,10 @@
 /* Modular Presentation Slider Engine Layout Rules */
 #about-section { 
     background-color: var(--bg-nebula-tint);
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
     overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
 .about-slider-wrapper {
@@ -182,7 +240,7 @@
 .slide-split-layout {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: stretch;
     width: 100%;
     min-height: 480px;
@@ -196,28 +254,30 @@
     max-height: 520px;
     align-items: center;
     justify-content: center;
-    background: rgba(26, 34, 56, 0.2);
+    background: var(--card-bg);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    padding: 1rem;
 }
 
 .slide-image-container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 12px;
 }
 
 /* Universal Navigation Controls Layout styling */
 .slide-controls-panel {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
 }
 
 .btn-slider {
-    background: rgba(26, 34, 56, 0.6);
+    background: var(--card-bg);
     border: 1px solid var(--island-border);
     color: var(--text-pure);
     padding: 0.5rem 1.25rem;
@@ -230,6 +290,7 @@
 
 .btn-slider:hover {
     background: var(--accent-cosmic);
+    color: #ffffff;
     transform: translateY(-1px);
 }
 
@@ -239,6 +300,8 @@
     min-height: 75vh;
     border-radius: 24px;
     margin-bottom: 40px;
+    padding: 4rem 3.5rem;
+    transition: background-color 0.3s ease;
 }
 
 .split-layout {
@@ -257,8 +320,8 @@
     aspect-ratio: 4 / 5;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.15);
+    border: 1px solid var(--card-border);
     background: #0f172a url('../../assets/ajithphotos/gensurgery.jpg') center/cover no-repeat;
 }
 
@@ -266,10 +329,10 @@
 .cosmic-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    background-color: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    gap: 0.6rem;
+    padding: 0.45rem 1.15rem;
+    background-color: var(--badge-bg);
+    border: 1px solid var(--island-border);
     color: var(--accent-starlight);
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -281,64 +344,66 @@
 
 /* Achievement Unified Card Format */
 .achievement-card {
-    border: 1px solid var(--accent-clinical, #00b4d8);
-    padding: 2.2rem;
-    border-radius: 16px;
-    background: rgba(11, 21, 40, 0.4);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    border: 1px solid var(--accent-starlight);
+    padding: 2.5rem 2.25rem;
+    border-radius: 20px;
+    background: var(--achievement-card-bg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .badge-certified {
-    color: var(--accent-cosmic, #64ffda);
+    color: var(--accent-starlight);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-size: 0.85rem;
 }
 
 .achievement-title {
     margin-top: 0;
-    color: #ffffff;
+    color: var(--text-pure);
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .achievement-description {
-    color: #b3c5ef;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    color: var(--text-nebula-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
     font-size: 0.95rem;
 }
 
 .achievement-description strong {
-    color: #ffffff;
+    color: var(--text-pure);
 }
 
 .btn-record {
-    background: var(--accent-cosmic, #64ffda);
-    color: #050b14;
+    background: var(--accent-cosmic);
+    color: #ffffff;
     width: max-content;
     display: inline-flex;
     text-transform: uppercase;
     padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
     text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-record:hover {
-    transform: scale(1.02);
-    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
 .portfolio-app h1 {
@@ -351,7 +416,7 @@
 }
 
 .portfolio-app h1 span {
-    background: linear-gradient(to right, #ffffff, var(--accent-starlight));
+    background: linear-gradient(to right, var(--text-pure), var(--accent-starlight));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -429,25 +494,25 @@
 }
 
 .card-nebula {
-    background: rgba(26, 34, 56, 0.4);
-    padding: 2.5rem;
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .card-nebula:hover {
     transform: translateY(-4px);
-    border-color: rgba(56, 189, 248, 0.2);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.05);
+    border-color: var(--accent-starlight);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(56, 189, 248, 0.05);
 }
 
 .card-nebula h3 {
     color: var(--text-pure);
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
     letter-spacing: -0.01em;
 }
 
@@ -465,9 +530,172 @@
 }
 
 @media (max-width: 768px) {
-    .navbar-island { gap: 1.5rem; padding: 0.5rem 1rem; }
+    .navbar-island { gap: 1rem; padding: 0.5rem 1rem; }
     .nav-links { display: none; }
     .section { padding: 120px 1.5rem 60px 1.5rem; }
     .portfolio-app h1 { font-size: 2.5rem; }
+    #contact-section { padding: 2.5rem 1.5rem; }
 }
+
+/* ==========================================================================
+   EXPLICIT DARK MODE STYLES FOR SLIDES & CARDS
+   ========================================================================== */
+.portfolio-app[data-theme="dark"] #about-section {
+    background-color: #111827;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-app[data-theme="dark"] .slide-image-container {
+    background: #0f172a;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.08);
+}
+
+.portfolio-app[data-theme="dark"] .achievement-card {
+    background: #0f172a;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.1);
+}
+
+.portfolio-app[data-theme="dark"] .badge-certified {
+    color: #38bdf8;
+}
+
+.portfolio-app[data-theme="dark"] .achievement-title,
+.portfolio-app[data-theme="dark"] .achievement-card h1 {
+    color: #ffffff;
+}
+
+.portfolio-app[data-theme="dark"] .achievement-card h1 span {
+    background: linear-gradient(to right, #ffffff, #38bdf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolio-app[data-theme="dark"] .achievement-description {
+    color: #94a3b8;
+}
+
+.portfolio-app[data-theme="dark"] .achievement-description strong {
+    color: #ffffff;
+}
+
+.portfolio-app[data-theme="dark"] .btn-slider {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #ffffff;
+}
+
+.portfolio-app[data-theme="dark"] .btn-slider:hover {
+    background: #6366f1;
+    color: #ffffff;
+    border-color: #6366f1;
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.4);
+}
+
+.portfolio-app[data-theme="dark"] .btn-record {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+.portfolio-app[data-theme="dark"] .btn-record:hover {
+    background: #818cf8;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.portfolio-app[data-theme="dark"] .card-nebula {
+    background: rgba(26, 34, 56, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   EXPLICIT LIGHT MODE STYLES FOR SLIDES & CARDS
+   ========================================================================== */
+.portfolio-app[data-theme="light"] #about-section {
+    background-color: #f1f5f9;
+    border-color: rgba(2, 132, 199, 0.15);
+}
+
+.portfolio-app[data-theme="light"] .slide-image-container {
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.portfolio-app[data-theme="light"] .achievement-card {
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.3);
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+.portfolio-app[data-theme="light"] .badge-certified {
+    color: #0284c7;
+}
+
+.portfolio-app[data-theme="light"] .achievement-title,
+.portfolio-app[data-theme="light"] .achievement-card h1 {
+    color: #0f172a;
+}
+
+.portfolio-app[data-theme="light"] .achievement-card h1 span {
+    background: linear-gradient(to right, #0f172a, #0284c7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolio-app[data-theme="light"] .achievement-description {
+    color: #334155;
+}
+
+.portfolio-app[data-theme="light"] .achievement-description strong {
+    color: #0f172a;
+}
+
+.portfolio-app[data-theme="light"] .btn-slider {
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.35);
+    color: #0f172a;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.portfolio-app[data-theme="light"] .btn-slider:hover {
+    background: #4f46e5;
+    color: #ffffff;
+    border-color: #4f46e5;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.portfolio-app[data-theme="light"] .btn-record {
+    background: #4f46e5;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+}
+
+.portfolio-app[data-theme="light"] .btn-record:hover {
+    background: #4338ca;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+}
+
+.portfolio-app[data-theme="light"] .card-nebula {
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.15);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.portfolio-app[data-theme="light"] .card-nebula h3 {
+    color: #0f172a;
+}
+
+.portfolio-app[data-theme="light"] .card-nebula p {
+    color: #334155;
+}
+
+.portfolio-app[data-theme="light"] #contact-section {
+    background-color: #e2e8f0;
+}
+
+
+
 
