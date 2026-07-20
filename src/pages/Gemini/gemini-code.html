@@ -1,474 +1,898 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. R. Ajith Kumar - Department of General Surgery</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Dr. R. Ajith Kumar | General Surgeon & Astrophotographer (@dr_psycoma)
+    </title>
+    <meta
+      name="description"
+      content="Official portfolio of Dr. R. Ajith Kumar (@dr_psycoma). Discover the intersection of General Surgery residency at Salem Polyclinic and deep-space celestial photography."
+    />
     <style>
-        /* Modern Celestial & Reassurance Design System Tokens */
-        :root {
-            --bg-deep-space: #0b0f19;
-            --bg-nebula-tint: #111827;
-            --bg-stellar-glow: #1a2238;
-            --text-pure: #ffffff;
-            --text-starlight: #e2e8f0;
-            --text-nebula-muted: #94a3b8;
-            --accent-cosmic: #6366f1;
-            --accent-starlight: #38bdf8;
-            --island-bg: rgba(11, 15, 25, 0.9);
-            --island-border: rgba(56, 189, 248, 0.25);
-            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      /* Modern Celestial & Reassurance Design System Tokens */
+      :root {
+        --bg-deep-space: #0b0f19;
+        --bg-nebula-tint: #111827;
+        --bg-stellar-glow: #1a2238;
+        --text-pure: #ffffff;
+        --text-starlight: #e2e8f0;
+        --text-nebula-muted: #94a3b8;
+        --accent-cosmic: #6366f1;
+        --accent-starlight: #38bdf8;
+        --island-bg: rgba(11, 15, 25, 0.9);
+        --island-border: rgba(56, 189, 248, 0.25);
+        --font-sans:
+          system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
 
-            /* Social Brand Colors */
-            --brand-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            --brand-x: #000000;
-            --brand-blogspot: #ff5722;
-            --brand-facebook: #1877f2;
-            --brand-spotify: #1ed760;
-            --brand-youtube: #ff0000;
-        }
+        /* Social Brand Colors */
+        --brand-instagram: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        --brand-x: #000000;
+        --brand-blogspot: #ff5722;
+        --brand-facebook: #1877f2;
+        --brand-spotify: #1ed760;
+        --brand-youtube: #ff0000;
+        --brand-linkedin: #0077b5;
+        --brand-quora: #b92b27;
+        --brand-researchgate: #00ccbb;
+      }
 
-        /* Base Resets & Smooth Traversal Configuration */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      /* Base Resets & Smooth Traversal Configuration */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 120px; 
-            font-family: var(--font-sans);
-            color: var(--text-starlight);
-            background-color: var(--bg-deep-space);
-        }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 120px;
+        font-family: var(--font-sans);
+        color: var(--text-starlight);
+        background-color: var(--bg-deep-space);
+      }
 
-        body {
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
+      body {
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        background-image:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(99, 102, 241, 0.05) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(56, 189, 248, 0.05) 0%,
+            transparent 40%
+          );
+        background-attachment: fixed;
+      }
 
-        /* Floating Centered Island Navigation System with Avatar Frame */
-        .navbar-container {
-            position: fixed;
-            top: 24px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-            width: 100%;
-            pointer-events: none;
-        }
+      /* Floating Centered Island Navigation System with Avatar Frame */
+      .navbar-container {
+        position: fixed;
+        top: 24px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+        width: 100%;
+        pointer-events: none;
+      }
 
-        .navbar-island {
-            pointer-events: auto;
-            background-color: var(--island-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--island-border);
-            padding: 0.5rem 2rem 0.5rem 1rem;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            gap: 3.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.1);
-        }
+      .navbar-island {
+        pointer-events: auto;
+        background-color: var(--island-bg);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--island-border);
+        padding: 0.5rem 2rem 0.5rem 1rem;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        gap: 3.5rem;
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.5),
+          0 0 20px rgba(56, 189, 248, 0.1);
+      }
 
-        .nav-profile-block {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
+      .nav-profile-block {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
 
-        /* Avatar Element with dynamic local path mapping */
-        .nav-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-starlight);
-            background: #1e293b url('../assets/ajithphotos/circleastro.jpg') center/cover no-repeat;
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
-            flex-shrink: 0;
-        }
+      .nav-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-starlight);
+        background: #1e293b url("../assets/ajithphotos/circleastro.jpg")
+          center/cover no-repeat;
+        box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        flex-shrink: 0;
+      }
 
-        .nav-logo {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            color: var(--text-pure);
-        }
+      .nav-logo {
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        color: var(--text-pure);
+      }
 
-        .nav-logo span {
-            color: var(--accent-starlight);
-        }
+      .nav-logo span {
+        color: var(--accent-starlight);
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2.25rem;
-            list-style: none;
-        }
+      .nav-links {
+        display: flex;
+        gap: 2.25rem;
+        list-style: none;
+      }
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-nebula-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.25s ease;
-        }
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-nebula-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.25s ease;
+      }
 
-        .nav-link:hover {
-            color: var(--text-pure);
-        }
+      .nav-link:hover {
+        color: var(--text-pure);
+      }
 
-        .nav-link.active {
-            color: var(--accent-starlight);
-            font-weight: 600;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
+      .nav-link.active {
+        color: var(--accent-starlight);
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      }
 
-        /* Layout Architecture & Content Canvas Blocks */
-        .section {
-            min-height: 100vh;
-            padding: 140px 4rem 80px 4rem;
-            display: flex;
-            align-items: center;
-            max-width: 1440px;
-            margin: 0 auto;
-            width: 100%;
-        }
+      /* Layout Architecture & Content Canvas Blocks */
+      .section {
+        min-height: 100vh;
+        padding: 140px 4rem 80px 4rem;
+        display: flex;
+        align-items: center;
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+      }
 
-        .section-wrapper {
-            width: 100%;
-        }
+      .section-wrapper {
+        width: 100%;
+      }
 
-        #hero-section { background-color: transparent; }
-        #about-section { 
-            background-color: var(--bg-nebula-tint);
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        #services-section { background-color: transparent; }
-        #contact-section { 
-            background-color: var(--bg-stellar-glow);
-            min-height: 75vh;
-            border-radius: 24px;
-            margin-bottom: 40px;
-        }
+      #hero-section {
+        background-color: transparent;
+      }
 
+      /* Modular Presentation Slider Engine Layout Rules */
+      #about-section {
+        background-color: var(--bg-nebula-tint);
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+      }
+
+      .about-slider-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .about-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+        transform: translateX(20px);
+      }
+
+      .about-slide.active-slide {
+        position: relative;
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      /* Equal-Height Side-by-Side Grid Setup */
+      .slide-split-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: stretch; /* Forces left and right children to have the exact same height */
+        width: 100%;
+        min-height: 480px;
+      }
+
+      /* Wrapper that holds the full image safely */
+      .slide-image-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        max-height: 520px; /* 2. Standardizes the absolute maximum height threshold */
+        align-items: center;
+        justify-content: center;
+        background: rgba(26, 34, 56, 0.2);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+      }
+
+      /* Retains original aspect ratio without cutoffs */
+      .slide-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Loads full image gracefully without crop focus */
+      }
+
+      /* Universal Navigation Controls Layout styling */
+      .slide-controls-panel {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn-slider {
+        background: rgba(26, 34, 56, 0.6);
+        border: 1px solid var(--island-border);
+        color: var(--text-pure);
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      }
+
+      .btn-slider:hover {
+        background: var(--accent-cosmic);
+        transform: translateY(-1px);
+      }
+
+      #services-section {
+        background-color: transparent;
+      }
+      #contact-section {
+        background-color: var(--bg-stellar-glow);
+        min-height: 75vh;
+        border-radius: 24px;
+        margin-bottom: 40px;
+      }
+
+      .split-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 5rem;
+        align-items: center;
+        width: 100%;
+      }
+
+      .image-container {
+        position: relative;
+        height: 90%;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.4),
+          0 0 40px rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: #0f172a url("../assets/ajithphotos/gensurgery.jpg")
+          center/cover no-repeat;
+      }
+
+      /* Typography Custom Elements */
+      .cosmic-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 1rem;
+        background-color: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        color: var(--accent-starlight);
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.075em;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Achievement Unified Card Format */
+      .achievement-card {
+        border: 1px solid var(--accent-clinical, #00b4d8);
+        padding: 2.2rem;
+        border-radius: 16px;
+        background: rgba(11, 21, 40, 0.4);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Evenly balances contents within the matching box height */
+      }
+
+      .badge-certified {
+        color: var(--accent-cosmic, #64ffda);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      .achievement-title {
+        margin-top: 0;
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .achievement-description {
+        color: #b3c5ef;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .achievement-description strong {
+        color: #ffffff;
+      }
+
+      .btn-record {
+        background: var(--accent-cosmic, #64ffda);
+        color: #050b14;
+        width: max-content;
+        display: inline-flex;
+        text-transform: uppercase;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .btn-record:hover {
+        transform: scale(1.02);
+        background: #ffffff;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        color: var(--text-pure);
+        margin-bottom: 1.5rem;
+      }
+
+      h1 span {
+        background: linear-gradient(to right, #ffffff, var(--accent-starlight));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--text-pure);
+        margin-bottom: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        color: var(--accent-starlight);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .lead-text {
+        font-size: 1.15rem;
+        color: var(--text-nebula-muted);
+        margin-bottom: 2rem;
+      }
+
+      /* Branded Channel Button Layouts */
+      .social-button-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .btn-brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.85rem 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition:
+          transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 0.2s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-brand:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+      }
+
+      .btn-instagram {
+        background: var(--brand-instagram);
+        box-shadow: 0 4px 15px rgba(204, 35, 102, 0.25);
+      }
+      .btn-x {
+        background: var(--brand-x);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-blogspot {
+        background: var(--brand-blogspot);
+        box-shadow: 0 4px 15px rgba(255, 87, 34, 0.25);
+      }
+      .btn-facebook {
+        background: var(--brand-facebook);
+        box-shadow: 0 4px 15px rgba(24, 119, 246, 0.25);
+      }
+      .btn-spotify {
+        background: var(--brand-spotify);
+        color: #000000;
+        box-shadow: 0 4px 15px rgba(30, 215, 96, 0.25);
+      }
+      .btn-youtube {
+        background: var(--brand-youtube);
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25);
+      }
+      .btn-linkedin {
+        background: var(--brand-linkedin);
+        box-shadow: 0 4px 15px rgba(0, 119, 181, 0.25);
+      }
+      .btn-quora {
+        background: var(--brand-quora);
+        box-shadow: 0 4px 15px rgba(185, 43, 39, 0.25);
+      }
+      .btn-researchgate {
+        background: var(--brand-researchgate);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Grid Services Panels */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .card-nebula {
+        background: rgba(26, 34, 56, 0.4);
+        padding: 2.5rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(10px);
+      }
+
+      @media (max-width: 1024px) {
         .split-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 5rem;
-            align-items: center;
-            width: 100%;
+          grid-template-columns: 1fr;
+          gap: 4rem;
         }
-
-        /* Main Showcase Image Blocks */
         .image-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: #0f172a url('../assets/ajithphotos/gensurgery.jpg') center/cover no-repeat;
+          max-width: 500px;
+          margin: 0 auto;
         }
-
-        .layered-images {
-            position: relative;
-            width: 100%;
-            height: 480px;
+        .slide-split-layout {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
         }
-
-        .img-main {
-            width: 80%;
-            height: 85%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            background: #0f172a url('../assets/ajithphotos/circleastro.jpg') center/cover no-repeat;
+        .slide-image-container {
+          height: 350px;
         }
+      }
 
-        .img-offset {
-            width: 55%;
-            height: 60%;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            border-radius: 20px;
-            border: 4px solid var(--bg-nebula-tint);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.5);
-            background: #111827 url('../assets/ajithphotos/grecord.jpg') center/cover no-repeat;
+      @media (max-width: 768px) {
+        .navbar-island {
+          gap: 1.5rem;
+          padding: 0.5rem 1rem;
         }
-
-        /* Typography Custom Elements */
-        .cosmic-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background-color: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            color: var(--accent-starlight);
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.075em;
-            margin-bottom: 1.5rem;
+        .nav-links {
+          display: none;
         }
-
+        .section {
+          padding: 120px 1.5rem 60px 1.5rem;
+        }
         h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            color: var(--text-pure);
-            margin-bottom: 1.5rem;
+          font-size: 2.5rem;
         }
-
-        h1 span {
-            background: linear-gradient(to right, #ffffff, var(--accent-starlight));
-            /*-webkit-background-clip: text;*/
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: var(--text-pure);
-            margin-bottom: 1.5rem;
-        }
-
-        h4 {
-            font-size: 1.1rem;
-            color: var(--accent-starlight);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .lead-text {
-            font-size: 1.15rem;
-            color: var(--text-nebula-muted);
-            margin-bottom: 2rem;
-        }
-
-        /* Branded Channel Button Layouts */
-        .social-button-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
-            width: 100%;
-            margin-top: 2rem;
-        }
-
-        .btn-brand {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.85rem 1.5rem;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-brand:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        .btn-instagram { background: var(--brand-instagram); box-shadow: 0 4px 15px rgba(204, 35, 102, 0.25); }
-        .btn-x { background: var(--brand-x); border: 1px solid rgba(255,255,255,0.15); }
-        .btn-blogspot { background: var(--brand-blogspot); box-shadow: 0 4px 15px rgba(255, 87, 34, 0.25); }
-        .btn-facebook { background: var(--brand-facebook); box-shadow: 0 4px 15px rgba(24, 119, 246, 0.25); }
-        .btn-spotify { background: var(--brand-spotify); color: #000000; box-shadow: 0 4px 15px rgba(30, 215, 96, 0.25); }
-        .btn-youtube { background: var(--brand-youtube); box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25); }
-
-        /* Grid Services Panels */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            width: 100%;
-            margin-top: 2rem;
-        }
-
-        .card-nebula {
-            background: rgba(26, 34, 56, 0.4);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(10px);
-        }
-
-        @media (max-width: 1024px) {
-            .split-layout { grid-template-columns: 1fr; gap: 4rem; }
-            .image-container, .layered-images { max-width: 500px; margin: 0 auto; }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-island { gap: 1.5rem; padding: 0.5rem 1rem; }
-            .nav-links { display: none; } /* Standard layout optimization for minor screen views */
-            .section { padding: 120px 1.5rem 60px 1.5rem; }
-            h1 { font-size: 2.5rem; }
-        }
+      }
     </style>
-</head>
-<body>
-
-    <!-- Centered Celestial Island Navbar with Photo Space -->
+  </head>
+  <body>
+    <!-- Centered Celestial Island Navbar -->
     <div class="navbar-container">
-        <nav class="navbar-island">
-            <a href="#hero" class="nav-profile-block">
-                <!-- Change target path in style template or src to assign custom image directly -->
-                <div class="nav-avatar"></div>
-                <div class="nav-logo">Dr. R. Ajith Kumar<span>.</span></div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">Background</a></li>
-                <li><a href="#services" class="nav-link">Expertise</a></li>
-                <li><a href="#contact" class="nav-link">Channels</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar-island">
+        <a href="#hero" class="nav-profile-block">
+          <div class="nav-avatar"></div>
+          <div class="nav-logo">Dr. R. Ajith Kumar<span>.</span></div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">Background</a></li>
+          <li><a href="#services" class="nav-link">Expertise</a></li>
+          <li><a href="#contact" class="nav-link">Channels</a></li>
+        </ul>
+      </nav>
     </div>
 
     <main>
-        <!-- Hero Section Canvas -->
-        <div id="hero" class="section-wrapper">
-            <section id="hero-section" class="section">
-                <div class="split-layout">
-                    <div>
-                        <div class="cosmic-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            Junior Resident & Aspiring Neurosurgeon
-                        </div>
-                        <h1>Navigating the Delicate <span>Inner Cosmos</span></h1>
-                        <h4>Department of General Surgery</h4>
-                        <p class="lead-text">Bridging structural clinical rigor at Salem Polyclinic Hospital with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.</p>
-                        <a href="#about" class="btn-brand" style="background: var(--accent-cosmic); width: auto; display: inline-flex;">View Clinical Foundation</a>
-                    </div>
-                    <!-- Primary Photo Frame: Map file to images/hero_stargazing.jpg -->
-                    <div class="image-container"></div>
-                </div>
-            </section>
-        </div>
+      <!-- Hero Section Canvas -->
+      <div id="hero" class="section-wrapper">
+        <section id="hero-section" class="section">
+          <div class="split-layout">
+            <div>
+              <div class="cosmic-badge">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+                Junior Resident - General Surgery & Aspiring Neuro Surgeon
+              </div>
+              <h1>Navigating the Delicate <span>Inner Cosmos</span></h1>
+              <h4>Dr. R. Ajith Kumar</h4>
+              <p class="lead-text">
+                Bridging structural clinical rigor at Salem Polyclinic Hospital
+                with the vast awe of deep-space cosmic systems. Mapping
+                structural biological frameworks with absolute surgical
+                discipline.
+              </p>
+              <a
+                href="https://salempolyclinic.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-brand"
+                style="
+                  background: var(--accent-cosmic);
+                  width: auto;
+                  display: inline-flex;
+                  text-transform: uppercase;
+                "
+                >VIEW HOSPITAL DETAILS</a
+              >
+            </div>
+            <div class="image-container"></div>
+          </div>
+        </section>
+      </div>
 
-        <!-- About Section Canvas -->
-        <div id="about" class="section-wrapper">
-            <section id="about-section" class="section">
-                <div class="split-layout">
-                    <!-- Layered Images Framework: Map to images/clinical_surgery.jpg & telescope_view.jpg -->
-                    <div class="layered-images">
-                        <div class="img-main"></div>
-                        <div class="img-offset"></div>
-                    </div>
-                    <div>
-                        <div class="cosmic-badge">Clinical Foundation</div>
-                        <h2>Medical Rigor & Astronomical Perspective</h2>
-                        <p class="lead-text">Acquired fundamental medical expertise during MBBS training at <strong>Sree Mookambika Institute Of Medical Sciences</strong> (Padanilam, Kulasekharam). Applying macro astronomical perspective to microscopic diagnostic landscapes to offer clear alignment options.</p>
-                        <p class="lead-text" style="font-size: 0.95rem; color: var(--text-nebula-muted);">Currently operating at Salem Polyclinic Hospital (K N RAO Hospital) — 250, Omalur Main Rd, Salem, Tamil Nadu 636007.</p>
-                    </div>
+      <!-- About Section Canvas (Flexible, Unified Height Layout) -->
+      <div id="about" class="section-wrapper">
+        <section id="about-section" class="section">
+          <div class="about-slider-wrapper">
+            <!-- SLIDE 1: Celestial Photography -->
+            <div class="about-slide active-slide">
+              <div class="slide-split-layout">
+                <!-- Left Container with responsive HTML Image element -->
+                <div class="slide-image-container">
+                  <img
+                    src="../assets/ajithphotos/circleastro.jpg"
+                    alt="Celestial Photography"
+                  />
                 </div>
-            </section>
-        </div>
 
-        <!-- Services Section Canvas -->
-        <div id="services" class="section-wrapper">
-            <section id="services-section" class="section">
-                <div style="width: 100%;">
-                    <div class="cosmic-badge">Core Focus Dimensions</div>
-                    <h2>Clinical Pathways & Specialization Systems</h2>
-                    <p class="lead-text">Approaching intricate micro-environments with calm, absolute observational methods.</p>
-                    
-                    <div class="grid-layout">
-                        <div class="card-nebula">
-                            <h3>General Surgery Rigor</h3>
-                            <p>Active precision operations and residency diagnostics framework executed within the dynamic matrix of Salem Polyclinic.</p>
-                        </div>
-                        <div class="card-nebula">
-                            <h3>Neurological Aspiration</h3>
-                            <p>Channelling deep analytical stargazing methods to prepare for complex structural neural network mapping models.</p>
-                        </div>
-                        <div class="card-nebula">
-                            <h3>Observational Calm</h3>
-                            <p>Utilizing high-contrast midnight aesthetics to frame patient interfaces with absolute reassurance parameters.</p>
-                        </div>
-                    </div>
+                <!-- Right Card Component -->
+                <div class="achievement-card">
+                  <span class="badge-certified">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
+                    STAR GAZING BY Dr. R. Ajith Kumar
+                  </span>
+                  <p class="achievement-description"></p>
+                  <h1>
+                    From Surgical Precision to
+                    <span>Deep Space Photography</span>
+                  </h1>
+                  <a
+                    href="https://www.instagram.com/dr_psycoma/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-record"
+                  >
+                    VIEW INSTAGRAM GALLERY
+                  </a>
+                  <div class="slide-controls-panel">
+                    <button class="btn-slider prev-slide-btn">← Prev</button>
+                    <button class="btn-slider next-slide-btn">Next →</button>
+                  </div>
                 </div>
-            </section>
-        </div>
+              </div>
+            </div>
 
-        <!-- Contact/Socials Section Canvas -->
-        <div id="contact" class="section-wrapper">
-            <section id="contact-section" class="section" style="flex-direction: column; align-items: flex-start;">
-                <div class="cosmic-badge">Broadcast Matrix</div>
-                <h2>Connect Across the Constellations</h2>
-                <p class="lead-text" style="max-width: 700px;">Access direct medical writing records, clinical broadcasts, updates, and astronomical updates across alternative integrated brand nodes.</p>
-                
-                <!-- Explicit Branded Color Matrix Blocks -->
-                <div class="social-button-matrix">
-                    <a href="https://www.instagram.com/dr_psycoma/" target="_blank" class="btn-brand btn-instagram">Instagram</a>
-                    <a href="https://x.com/dr_psycoma" target="_blank" class="btn-brand btn-x">X Platform</a>
-                    <a href="https://nextauthor.blogspot.com/" target="_blank" class="btn-brand btn-blogspot">Blogspot</a>
-                    <a href="https://www.facebook.com/shivaji.raj.33" target="_blank" class="btn-brand btn-facebook">Facebook</a>
-                    <a href="https://open.spotify.com/show/2zEF3zdnMq7hw4dN8g2Pvs?si=1387ecf1fdb54e2d" target="_blank" class="btn-brand btn-spotify">Spotify Podcast</a>
-                    <a href="https://www.youtube.com/@dr_psycoma" target="_blank" class="btn-brand btn-youtube">YouTube Channel</a>
+            <!-- SLIDE 2: Guinness World Record -->
+            <div class="about-slide">
+              <div class="slide-split-layout">
+                <!-- Left Container with responsive HTML Image element -->
+                <div class="slide-image-container">
+                  <img
+                    src="../assets/ajithphotos/grecord.jpg"
+                    alt="Guinness World Record Certificate"
+                  />
                 </div>
-            </section>
-        </div>
+
+                <!-- Right Card Component -->
+                <div class="achievement-card">
+                  <span class="badge-certified"
+                    >✓ CERTIFIED OFFICIAL PARTICIPANT</span
+                  >
+                  <h3 class="achievement-title">
+                    Guinness World Records™ Achievement
+                  </h3>
+                  <p class="achievement-description">
+                    <strong>Dr. R. Ajith Kumar</strong> is officially recognized
+                    as a certified participant in the historic NBEMS national
+                    initiative that set the global record for the
+                    <strong
+                      >"Most viewers of an artificial intelligence in healthcare
+                      lesson live stream on YouTube."</strong
+                    >
+                    This milestone academic masterclass brought together 17,999
+                    medical professionals.
+                  </p>
+                  <a
+                    href="https://www.guinnessworldrecords.com/world-records/782380-most-viewers-of-an-artificial-intelligence-in-healthcare-lesson-live-stream-on-yo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-record"
+                  >
+                    VIEW RECORD DETAILS
+                  </a>
+
+                  <div class="slide-controls-panel">
+                    <button class="btn-slider prev-slide-btn">← Prev</button>
+                    <button class="btn-slider next-slide-btn">Next →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TO ADD NEW SLIDES IN THE FUTURE: Copy-paste either of the complete <div class="about-slide"> blocks right here. -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Services Section Canvas -->
+      <div id="services" class="section-wrapper">
+        <section id="services-section" class="section">
+          <div style="width: 100%">
+            <div class="cosmic-badge">Core Focus Dimensions</div>
+            <h2>Clinical Pathways & Specialization Systems</h2>
+            <p class="lead-text">
+              Acquired fundamental medical expertise during MBBS training at
+              <strong>Sree Mookambika Institute Of Medical Sciences</strong>
+              (Padanilam, Kulasekharam). Approaching intricate
+              micro-environments with calm, absolute observational methods.
+            </p>
+
+            <div class="grid-layout">
+              <div class="card-nebula">
+                <h3>General Surgery Rigor</h3>
+                <p>
+                  Active precision operations and residency diagnostics
+                  framework executed within the dynamic matrix of Salem
+                  Polyclinic.
+                </p>
+              </div>
+              <div class="card-nebula">
+                <h3>Neurological Aspiration</h3>
+                <p>
+                  Channelling deep analytical stargazing methods to prepare for
+                  complex structural neural network mapping models.
+                </p>
+              </div>
+              <div class="card-nebula">
+                <h3>Observational Calm</h3>
+                <p>
+                  Utilizing high-contrast midnight aesthetics to frame patient
+                  interfaces with absolute reassurance parameters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Contact/Socials Section Canvas -->
+      <div id="contact" class="section-wrapper">
+        <section
+          id="contact-section"
+          class="section"
+          style="flex-direction: column; align-items: flex-start"
+        >
+          <div class="cosmic-badge">Broadcast Matrix</div>
+          <h2>Connect Across the Constellations</h2>
+          <p class="lead-text" style="max-width: 700px">
+            Access direct medical writing records, clinical broadcasts, updates,
+            and astronomical updates across alternative integrated brand nodes.
+          </p>
+
+          <div class="social-button-matrix">
+            <a
+              href="https://www.instagram.com/dr_psycoma/"
+              target="_blank"
+              class="btn-brand btn-instagram"
+              >Instagram</a
+            >
+            <a
+              href="https://x.com/dr_psycoma"
+              target="_blank"
+              class="btn-brand btn-x"
+              >X Platform</a
+            >
+            <a
+              href="https://nextauthor.blogspot.com/"
+              target="_blank"
+              class="btn-brand btn-blogspot"
+              >Blogspot</a
+            >
+            <a
+              href="https://www.facebook.com/shivaji.raj.33"
+              target="_blank"
+              class="btn-brand btn-facebook"
+              >Facebook</a
+            >
+            <a
+              href="https://open.spotify.com/show/2zEF3zdnMq7hw4dN8g2Pvs?si=1387ecf1fdb54e2d"
+              target="_blank"
+              class="btn-brand btn-spotify"
+              >Spotify Podcast</a
+            >
+            <a
+              href="https://www.youtube.com/@dr_psycoma"
+              target="_blank"
+              class="btn-brand btn-youtube"
+              >YouTube Channel</a
+            >
+            <a
+              href="https://www.linkedin.com/in/dr-r-ajith-kumar-b2346a274/"
+              target="_blank"
+              class="btn-brand btn-linkedin"
+              >LinkedIn</a
+            >
+            <a
+              href="https://www.quora.com/profile/AJITH-KUMAR-R-46"
+              target="_blank"
+              class="btn-brand btn-quora"
+              >Quora</a
+            >
+            <a
+              href="https://www.researchgate.net/profile/Raj_Ajith_Kumar"
+              target="_blank"
+              class="btn-brand btn-researchgate"
+              >ResearchGate</a
+            >
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- Native Dynamic Tracking Engine -->
+    <!-- Navigation & Infinite Slider Engine Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section-wrapper');
-            const navLinks = document.querySelectorAll('.nav-link');
+      document.addEventListener("DOMContentLoaded", () => {
+        // Slider Control Configuration
+        const slides = document.querySelectorAll(".about-slide");
+        const nextBtns = document.querySelectorAll(".next-slide-btn");
+        const prevBtns = document.querySelectorAll(".prev-slide-btn");
+        let activeIndex = 0;
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '-40% 0px -45% 0px', 
-                threshold: 0
-            };
+        function changeSlide(targetIndex) {
+          if (slides.length === 0) return;
 
-            const observerCallback = (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const activeId = entry.target.id;
-                        navLinks.forEach(link => {
-                            if (link.getAttribute('href') === `#${activeId}`) {
-                                link.classList.add('active');
-                            } else {
-                                link.classList.remove('active');
-                            }
-                        });
-                    }
-                });
-            };
+          slides[activeIndex].classList.remove("active-slide");
 
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-            sections.forEach(section => observer.observe(section));
+          if (targetIndex >= slides.length) {
+            activeIndex = 0;
+          } else if (targetIndex < 0) {
+            activeIndex = slides.length - 1;
+          } else {
+            activeIndex = targetIndex;
+          }
+
+          slides[activeIndex].classList.add("active-slide");
+        }
+
+        nextBtns.forEach((btn) => {
+          btn.addEventListener("click", () => changeSlide(activeIndex + 1));
         });
+
+        prevBtns.forEach((btn) => {
+          btn.addEventListener("click", () => changeSlide(activeIndex - 1));
+        });
+
+        // Navigation Observer Scrollspy
+        const sections = document.querySelectorAll(".section-wrapper");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "-40% 0px -45% 0px",
+          threshold: 0,
+        };
+
+        const observerCallback = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const activeId = entry.target.id;
+              navLinks.forEach((link) => {
+                if (link.getAttribute("href") === `#${activeId}`) {
+                  link.classList.add("active");
+                } else {
+                  link.classList.remove("active");
+                }
+              });
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          observerCallback,
+          observerOptions,
+        );
+        sections.forEach((section) => observer.observe(section));
+      });
     </script>
-</body>
+  </body>
 </html>
