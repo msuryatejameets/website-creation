@@ -1,6 +1,7 @@
 import circleastro from '../assets/ajithphotos/circleastro.jpg'
 import gensurgery from '../assets/ajithphotos/gensurgery.jpg'
 import grecord from '../assets/ajithphotos/grecord.jpg'
+import ajithtennis from '../assets/ajithphotos/ajithtennis.jpg'
 
 export const profile = {
   name: 'Dr. Ajith Kumar R',
@@ -75,7 +76,7 @@ export const profile = {
   personal: {
     languages: ['Tamil', 'English', 'Telugu', 'Hindi'],
     interests: ['Neurosurgical anatomy', 'Surgical simulation', 'Medical research', 'Distance running'],
-    bio: 'Dr. Smith is passionate about bridging general surgical training with a future career in neurosurgery. She regularly attends neurosurgical conferences, participates in cadaveric workshops, and mentors junior medical students in surgical skills labs.',
+    bio: 'Dr. Ajith is passionate about bridging general surgical training with a future career in neurosurgery. She regularly attends neurosurgical conferences, participates in cadaveric workshops, and mentors junior medical students in surgical skills labs.',
   },
   contact: {
     phone: '+91 98765 43210',
@@ -128,8 +129,8 @@ export const profile = {
         id: 'celestial-photography',
         badge: 'STAR GAZING BY Dr. R. Ajith Kumar',
         badgeIcon: true,
-        titlePrefix: 'From Surgical Precision to ',
-        titleHighlight: 'Deep Space Photography',
+        titlePrefix: 'microscopic detail to ',
+        titleHighlight: 'edge of the universe',
         description: '',
         url: 'https://www.instagram.com/dr_psycoma/',
         urlLabel: 'VIEW INSTAGRAM GALLERY',
@@ -149,6 +150,19 @@ export const profile = {
         btnClass: 'btn-record',
         image: grecord,
         imageAlt: 'Guinness World Record Certificate',
+      },
+      {
+        id: 'tennis',
+        badge: 'The Tennis Star Dr. R. Ajith Kumar',
+        badgeIcon: true,
+        titlePrefix: 'Scalpel in the OR ,',
+        titleHighlight: ' Racquet at the Tennis Court',
+        description: '',
+        url: 'https://www.instagram.com/dr_psycoma/',
+        urlLabel: 'VIEW INSTAGRAM GALLERY',
+        btnClass: 'btn-record',
+        image: ajithtennis,
+        imageAlt: 'Tennis Photography',
       },
     ],
     coreFocus: {
