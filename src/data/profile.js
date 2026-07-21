@@ -4,32 +4,32 @@ import grecord from '../assets/ajithphotos/grecord.jpg'
 
 export const profile = {
   name: 'Dr. Ajith Kumar R',
-  title: 'Junior Resident, General Surgery | Aspiring Neurosurgeon',
-  specialty: 'General Surgery (Junior Resident)',
+  title: 'DNB, General Surgery | Aspiring Neurosurgeon',
+  specialty: 'General Surgery (DNB)',
   location: {
-    city: ' Salem',
+    city: ' Chennai',
     state: 'Tamil Nadu',
     country: 'India',
-    clinic: 'Salem Poly Clinic Hospital – Department of General Surgery',
+    clinic: 'Tamil Nadu Dr. M.G.R. Medical University – Department of General Surgery',
   },
   summary:
-    'Dr. Ajith Kumar R is a junior resident in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
+    'Dr. Ajith Kumar R is a DNB in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
   credentials: [
     'MBBS – All India Institute of Medical Sciences',
-    'DNB (General Surgery) – In progress, Salem Poly Clinic  Hospital',
+    'DNB (General Surgery) – In progress,  Tamil Nadu Dr. M.G.R. Medical University',
     'Guinness World Record Certified Participant',
     'Research training in neurosurgical outcomes and trauma care',
   ],
   experience: [
     {
       year: '2024 – Present',
-      role: 'Junior Resident, General Surgery',
-      org: 'Salem Poly Clinic  Hospital,  Salem',
+      role: 'DNB, General Surgery',
+      org: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
     {
       year: '2023 – 2024',
       role: 'Senior Resident, General Surgery (Rotating)',
-      org: 'Salem Poly Clinic  Hospital,  Salem',
+      org: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
     {
       year: '2022 – 2023',
@@ -41,7 +41,7 @@ export const profile = {
     {
       year: '2022 – Present',
       degree: 'MS (General Surgery)',
-      institution: 'Salem Poly Clinic  Hospital',
+      institution: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
     {
       year: '2016',
@@ -89,14 +89,14 @@ export const profile = {
   contact: {
     phone: '+91 98765 43210',
     email: 'contact@drjanesmith.example.com',
-    address: 'Department of Surgery, Salem Poly Clinic  Hospital, Parel,  Salem, Tamil Nadu 400012, India',
+    address: 'Department of Surgery, Tamil Nadu Dr. M.G.R. Medical University, Tamil Nadu , India',
     hours: 'Monday – Saturday: 8:00 AM – 4:00 PM (Hospital duty hours)',
-    mapUrl: 'https://maps.google.com/?q=King+Edward+Memorial+Hospital+ Salem',
+    mapUrl:'https://www.practo.com/chennai/doctor/ajith-kumar-r-general-surgeon'
   },
   social: {
     linkedin: 'https://www.linkedin.com/in/dr-r-ajith-kumar-b2346a274/',
     googleScholar: 'https://scholar.google.com/citations?user=example',
-    hospitalProfile: 'https://salempolyclinic.com/',
+    hospitalProfile: '',
     instagram: 'https://www.instagram.com/dr_psycoma/',
     x: 'https://x.com/dr_psycoma',
     blogspot: 'https://nextauthor.blogspot.com/',
@@ -111,25 +111,24 @@ export const profile = {
     baseUrl: 'https://www.drajithkumar.example.com',
     defaultKeywords: [
       'general surgery resident',
-      'junior resident surgeon',
+      'DNB surgeon',
       'aspiring neurosurgeon',
       'neurosurgery',
       'general surgery',
-      ' Salem',
+      ' Resident',
       'surgical trainee',
-      'Salem Poly Clinic  Hospital',
+      ' Tamil Nadu Dr. M.G.R. Medical University',
     ],
     ogImage: '/og-image.svg',
   },
   gemini: {
     hero: {
-      badge: 'Junior Resident - General Surgery & Aspiring Neuro Surgeon',
+      badge: 'DNB - General Surgery & Aspiring Neuro Surgeon',
       titlePrefix: 'Navigating the Delicate ',
       titleHighlight: 'Inner Cosmos',
       doctorName: 'Dr. R. Ajith Kumar',
-      leadText:
-        'Bridging structural clinical rigor at Salem Polyclinic Hospital with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.',
-      hospitalUrl: 'https://salempolyclinic.com/',
+      leadText:    'Bridging structural clinical rigor at  Tamil Nadu Dr. M.G.R. Medical University with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.',
+      hospitalUrl: 'https://www.practo.com/chennai/doctor/ajith-kumar-r-general-surgeon',
       hospitalButtonText: 'VIEW HOSPITAL DETAILS',
       image: gensurgery,
     },
@@ -170,7 +169,7 @@ export const profile = {
         {
           title: 'General Surgery Rigor',
           description:
-            'Active precision operations and residency diagnostics framework executed within the dynamic matrix of Salem Polyclinic.',
+            'Active precision operations and residency diagnostics framework executed within the dynamic matrix of Tamil Nadu Dr. M.G.R. Medical University.',
         },
         {
           title: 'Neurological Aspiration',
