@@ -22,20 +22,11 @@ export const profile = {
   ],
   experience: [
     {
-      year: '2024 – Present',
+      year: '2026 – Present',
       role: 'DNB, General Surgery',
       org: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
-    {
-      year: '2023 – 2024',
-      role: 'Senior Resident, General Surgery (Rotating)',
-      org: ' Tamil Nadu Dr. M.G.R. Medical University',
-    },
-    {
-      year: '2022 – 2023',
-      role: 'Neurosurgery Observership & Research Associate',
-      org: 'National Neuroscience Institute',
-    },
+
   ],
   education: [
     {
@@ -107,7 +98,7 @@ export const profile = {
     researchgate: 'https://www.researchgate.net/profile/Raj_Ajith_Kumar',
   },
   seo: {
-    siteName: 'Dr. Ajith Kumar R – General Surgery Resident',
+    siteName: 'Dr. Ajith Kumar R – General Surgery',
     baseUrl: 'https://www.drajithkumar.example.com',
     defaultKeywords: [
       'general surgery resident',
