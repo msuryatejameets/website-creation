@@ -17,7 +17,7 @@ export const profile = {
     'Dr. Ajith Kumar R is a DNB in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
   credentials: [
     'MBBS – All India Institute of Medical Sciences',
-    'DNB (General Surgery) – In progress,  Tamil Nadu Dr. M.G.R. Medical University',
+    'DNB (General Surgery) – In progress,  NBEMS',
     'Guinness World Record Certified Participant',
     'Research training in neurosurgical outcomes and trauma care',
   ],
@@ -155,7 +155,7 @@ export const profile = {
         id: 'tennis',
         badge: 'The Tennis Star Dr. R. Ajith Kumar',
         badgeIcon: true,
-        titlePrefix: 'Scalpel in the OR ,',
+        titlePrefix: 'Scalpel in the OR ',
         titleHighlight: ' Racquet at the Tennis Court',
         description: '',
         url: 'https://www.instagram.com/dr_psycoma/',
