@@ -19,7 +19,7 @@ function CentralSeo() {
       case '/':
         return {
           title: `${name} – General Surgery Resident in ${profLoc.city} | Aspiring Neurosurgeon`,
-          description: `${name} is a junior resident in General Surgery in ${profLoc.city}, ${profLoc.country}, with a dedicated focus on neurosurgery. View career profile, achievements, and contact details.`,
+          description: `${name} is a DNB in General Surgery in ${profLoc.city}, ${profLoc.country}, with a dedicated focus on neurosurgery. View career profile, achievements, and contact details.`,
           path: '/',
           schemaType: 'physician',
         }

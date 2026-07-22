@@ -21,6 +21,8 @@ export default function AboutSection({ slides = [] }) {
 
   const slide1 = slides[0];
   const slide2 = slides[1];
+  const slide3 = slides[2];
+  const slide4 = slides[3];
 
   return (
     <div id="about" className="section-wrapper">
@@ -34,12 +36,12 @@ export default function AboutSection({ slides = [] }) {
                   <img src={slide1.image} alt={slide1.imageAlt} />
                 </div>
                 <div className="achievement-card">
-                  <span className="badge-certified">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    {' '}{slide1.badge}
-                  </span>
+                  <div className="cosmic-badge">
+                   <svg className="badge-star-icon"  width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                   </svg>
+                   {' '}{slide1.badge}{' '}{slide1.doctorName}
+                  </div>
                   <p className="achievement-description"></p>
                   <h1>
                     {slide1.titlePrefix}
@@ -82,6 +84,85 @@ export default function AboutSection({ slides = [] }) {
                     className={slide2.btnClass}
                   >
                     {slide2.urlLabel}
+                  </a>
+                  <div className="slide-controls-panel">
+                    <button className="btn-slider prev-slide-btn" onClick={prevSlide}>← Prev</button>
+                    <button className="btn-slider next-slide-btn" onClick={nextSlide}>Next →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+           {/* SLIDE 3: Tennis */}
+          {slide3 && (
+            <div className={`about-slide ${activeSlideIndex === 2 ? 'active-slide' : ''}`}>
+              <div className="slide-split-layout">
+                <div className="slide-image-container">
+                  <img src={slide3.image} alt={slide3.imageAlt} />
+                </div>
+                <div className="achievement-card">
+                   <div className="cosmic-badge">
+                   <svg className="badge-star-icon"  width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                   </svg>
+                   {' '}{slide3.badge}{' '}{slide3.doctorName}
+                  </div>
+                  <p className="achievement-description"></p>
+                  <h1>
+                    {slide3.titlePrefix}
+                    <span>{slide3.titleHighlight}</span>
+                  </h1>
+                  <a
+                    href={slide3.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={slide3.btnClass}
+                  >
+                    {slide3.urlLabel}
+                  </a>
+                  <div className="slide-controls-panel">
+                    <button className="btn-slider prev-slide-btn" onClick={prevSlide}>← Prev</button>
+                    <button className="btn-slider next-slide-btn" onClick={nextSlide}>Next →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+         {/* SLIDE 4: Kalimba */}
+           {slide4 && (
+            <div className={`about-slide ${activeSlideIndex === 3 ? 'active-slide' : ''}`}>
+              <div className="slide-split-layout">
+                <div className="slide-image-container">
+                {/* Updated to video tag */}
+                      <video 
+                      className="slide-video"  
+                      controls
+                      playsInline
+                      >
+                      <source src={slide4.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                      </video>
+  
+                </div>
+                <div className="achievement-card">
+                  <div className="cosmic-badge">
+                   <svg  className="badge-star-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                   </svg>
+                   {' '}{slide4.badge}{slide4.doctorName}
+                  </div>
+                  <p className="achievement-description"></p>
+                  <h1>
+                    {slide4.titlePrefix}
+                    <span>{slide4.titleHighlight}</span>
+                  </h1>
+                  <a
+                    href={slide4.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={slide4.btnClass}
+                  >
+                    {slide4.urlLabel}
                   </a>
                   <div className="slide-controls-panel">
                     <button className="btn-slider prev-slide-btn" onClick={prevSlide}>← Prev</button>

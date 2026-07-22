@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
-import ThemeToggle from '../components/ThemeToggle'
-import { useTheme } from '../context/ThemeContext'
 import { profile } from '../data/profile'
 
 export default function Home() {
-  const { name, title, location, summary, credentials } = profile
-  const { theme } = useTheme()
+  const { name, title, location, summary, credentials } = profile;
 
   return (
-    <>
+    <div className='homeComponent'>
       <section className="hero">
         <div className="hero-content">
           <p className="eyebrow">{location.clinic}</p>
@@ -39,13 +36,12 @@ export default function Home() {
               <strong>{location.city}</strong>, {location.state}
             </p>
             <p>{location.clinic}</p>
-         
           </div>
         </div>
       </section>
 
       <section className="section highlights">
-        <h2>Why Patients Choose {name}</h2>
+        <h2>Why Patients Choose <br></br> {name}</h2>
         <div className="card-grid">
           <article className="card">
             <h3>Surgical Training</h3>
@@ -70,6 +66,6 @@ export default function Home() {
           </article>
         </div>
       </section>
-    </>
+    </div>
   )
 }

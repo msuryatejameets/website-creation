@@ -1,48 +1,40 @@
 import circleastro from '../assets/ajithphotos/circleastro.jpg'
 import gensurgery from '../assets/ajithphotos/gensurgery.jpg'
 import grecord from '../assets/ajithphotos/grecord.jpg'
+import ajithtennis from '../assets/ajithphotos/ajithtennis.jpg'
+import kalimba from '../assets/ajithphotos/kalimba.mp4'
 
 export const profile = {
   name: 'Dr. Ajith Kumar R',
-  title: 'Junior Resident, General Surgery | Aspiring Neurosurgeon',
-  specialty: 'General Surgery (Junior Resident)',
+  title: 'DNB, General Surgery | Aspiring Neurosurgeon',
+  specialty: 'General Surgery (DNB)',
   location: {
-    city: ' Salem',
+    city: ' Chennai',
     state: 'Tamil Nadu',
     country: 'India',
-    clinic: 'Salem Poly Clinic Hospital – Department of General Surgery',
+    clinic: 'Tamil Nadu Dr. M.G.R. Medical University – Department of General Surgery',
   },
   summary:
-    'Dr. Ajith Kumar R is a junior resident in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
+    'Dr. Ajith Kumar R is a DNB in General Surgery with a focused interest in neurosurgery. He is building strong foundations in operative skills, emergency surgical care, and clinical decision-making while actively pursuing research and observerships in cranial and spinal neurosurgery.',
   credentials: [
     'MBBS – All India Institute of Medical Sciences',
-    'DNB (General Surgery) – In progress, Salem Poly Clinic  Hospital',
+    'DNB (General Surgery) – In progress,  NBEMS',
     'Guinness World Record Certified Participant',
-    'Basic Life Support (BLS) Instructor',
     'Research training in neurosurgical outcomes and trauma care',
   ],
   experience: [
     {
-      year: '2024 – Present',
-      role: 'Junior Resident, General Surgery',
-      org: 'Salem Poly Clinic  Hospital,  Salem',
+      year: '2026 – Present',
+      role: 'DNB, General Surgery',
+      org: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
-    {
-      year: '2023 – 2024',
-      role: 'Senior Resident, General Surgery (Rotating)',
-      org: 'Salem Poly Clinic  Hospital,  Salem',
-    },
-    {
-      year: '2022 – 2023',
-      role: 'Neurosurgery Observership & Research Associate',
-      org: 'National Neuroscience Institute',
-    },
+
   ],
   education: [
     {
       year: '2022 – Present',
       degree: 'MS (General Surgery)',
-      institution: 'Salem Poly Clinic  Hospital',
+      institution: ' Tamil Nadu Dr. M.G.R. Medical University',
     },
     {
       year: '2016',
@@ -85,19 +77,19 @@ export const profile = {
   personal: {
     languages: ['Tamil', 'English', 'Telugu', 'Hindi'],
     interests: ['Neurosurgical anatomy', 'Surgical simulation', 'Medical research', 'Distance running'],
-    bio: 'Dr. Smith is passionate about bridging general surgical training with a future career in neurosurgery. She regularly attends neurosurgical conferences, participates in cadaveric workshops, and mentors junior medical students in surgical skills labs.',
+    bio: 'Dr. Ajith is passionate about bridging general surgical training with a future career in neurosurgery. She regularly attends neurosurgical conferences, participates in cadaveric workshops, and mentors junior medical students in surgical skills labs.',
   },
   contact: {
     phone: '+91 98765 43210',
     email: 'contact@drjanesmith.example.com',
-    address: 'Department of Surgery, Salem Poly Clinic  Hospital, Parel,  Salem, Tamil Nadu 400012, India',
+    address: 'Department of Surgery, Tamil Nadu Dr. M.G.R. Medical University, Tamil Nadu , India',
     hours: 'Monday – Saturday: 8:00 AM – 4:00 PM (Hospital duty hours)',
-    mapUrl: 'https://maps.google.com/?q=King+Edward+Memorial+Hospital+ Salem',
+    mapUrl:'https://www.practo.com/chennai/doctor/ajith-kumar-r-general-surgeon'
   },
   social: {
     linkedin: 'https://www.linkedin.com/in/dr-r-ajith-kumar-b2346a274/',
     googleScholar: 'https://scholar.google.com/citations?user=example',
-    hospitalProfile: 'https://salempolyclinic.com/',
+    hospitalProfile: '',
     instagram: 'https://www.instagram.com/dr_psycoma/',
     x: 'https://x.com/dr_psycoma',
     blogspot: 'https://nextauthor.blogspot.com/',
@@ -108,39 +100,39 @@ export const profile = {
     researchgate: 'https://www.researchgate.net/profile/Raj_Ajith_Kumar',
   },
   seo: {
-    siteName: 'Dr. Ajith Kumar R – General Surgery Resident',
+    siteName: 'Dr. Ajith Kumar R – General Surgery',
     baseUrl: 'https://www.drajithkumar.example.com',
     defaultKeywords: [
       'general surgery resident',
-      'junior resident surgeon',
+      'DNB surgeon',
       'aspiring neurosurgeon',
       'neurosurgery',
       'general surgery',
-      ' Salem',
+      ' Resident',
       'surgical trainee',
-      'Salem Poly Clinic  Hospital',
+      ' Tamil Nadu Dr. M.G.R. Medical University',
     ],
     ogImage: '/og-image.svg',
   },
   gemini: {
     hero: {
-      badge: 'Junior Resident - General Surgery & Aspiring Neuro Surgeon',
+      badge: 'DNB - General Surgery & Aspiring Neuro Surgeon',
       titlePrefix: 'Navigating the Delicate ',
       titleHighlight: 'Inner Cosmos',
       doctorName: 'Dr. R. Ajith Kumar',
-      leadText:
-        'Bridging structural clinical rigor at Salem Polyclinic Hospital with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.',
-      hospitalUrl: 'https://salempolyclinic.com/',
+      leadText:    'Bridging structural clinical rigor at  Tamil Nadu Dr. M.G.R. Medical University with the vast awe of deep-space cosmic systems. Mapping structural biological frameworks with absolute surgical discipline.',
+      hospitalUrl: 'https://www.practo.com/chennai/doctor/ajith-kumar-r-general-surgeon',
       hospitalButtonText: 'VIEW HOSPITAL DETAILS',
       image: gensurgery,
     },
     aboutSlides: [
       {
         id: 'celestial-photography',
-        badge: 'STAR GAZING BY Dr. R. Ajith Kumar',
+        badge: 'Star Gazing By ',
+        doctorName:'Dr. R. Ajith Kumar',
         badgeIcon: true,
-        titlePrefix: 'From Surgical Precision to ',
-        titleHighlight: 'Deep Space Photography',
+        titlePrefix: 'Microscopic detail To ',
+        titleHighlight: 'edge of the Universe',
         description: '',
         url: 'https://www.instagram.com/dr_psycoma/',
         urlLabel: 'VIEW INSTAGRAM GALLERY',
@@ -161,6 +153,34 @@ export const profile = {
         image: grecord,
         imageAlt: 'Guinness World Record Certificate',
       },
+      {
+        id: 'tennis',
+        badge: 'Tennis Sport Star ',
+        badgeIcon: true,
+        doctorName:'Dr. R. Ajith Kumar',
+        titlePrefix: 'Scalpel in the OR ',
+        titleHighlight: ' Racquet at the Tennis Court',
+        description: '',
+        url: 'https://x.com/dr_psycoma',
+        urlLabel: 'VIEW UNFILTERED SERVES ON X',
+        btnClass: 'btn-record',
+        image: ajithtennis,
+        imageAlt: 'Tennis Photography',
+      },
+      {
+        id: 'kalimba',
+        badge: 'Music Magician ',
+        badgeIcon: true,
+        doctorName:'Dr. R. Ajith Kumar',
+        titlePrefix: 'Fine Dexterity at Work,',
+        titleHighlight: 'Acoustic Magic at Play',
+        description: '',
+        url: 'https://www.youtube.com/@dr_psycoma',
+        urlLabel: 'VIEW YOUTUBE PLAYLIST',
+        btnClass: 'btn-record',
+        video: kalimba,
+        imageAlt: 'Kalimba',
+      },
     ],
     coreFocus: {
       badge: 'Core Focus Dimensions',
@@ -171,7 +191,7 @@ export const profile = {
         {
           title: 'General Surgery Rigor',
           description:
-            'Active precision operations and residency diagnostics framework executed within the dynamic matrix of Salem Polyclinic.',
+            'Active precision operations and residency diagnostics framework executed within the dynamic matrix of Tamil Nadu Dr. M.G.R. Medical University.',
         },
         {
           title: 'Neurological Aspiration',
