@@ -2,6 +2,7 @@ import circleastro from '../assets/ajithphotos/circleastro.jpg'
 import gensurgery from '../assets/ajithphotos/gensurgery.jpg'
 import grecord from '../assets/ajithphotos/grecord.jpg'
 import ajithtennis from '../assets/ajithphotos/ajithtennis.jpg'
+import kalimba from '../assets/ajithphotos/kalimba.mp4'
 
 export const profile = {
   name: 'Dr. Ajith Kumar R',
@@ -127,10 +128,11 @@ export const profile = {
     aboutSlides: [
       {
         id: 'celestial-photography',
-        badge: 'STAR GAZING BY Dr. R. Ajith Kumar',
+        badge: 'Star Gazing By ',
+        doctorName:'Dr. R. Ajith Kumar',
         badgeIcon: true,
-        titlePrefix: 'microscopic detail to ',
-        titleHighlight: 'edge of the universe',
+        titlePrefix: 'Microscopic detail To ',
+        titleHighlight: 'edge of the Universe',
         description: '',
         url: 'https://www.instagram.com/dr_psycoma/',
         urlLabel: 'VIEW INSTAGRAM GALLERY',
@@ -153,16 +155,31 @@ export const profile = {
       },
       {
         id: 'tennis',
-        badge: 'The Tennis Star Dr. R. Ajith Kumar',
+        badge: 'Tennis Sport Star ',
         badgeIcon: true,
+        doctorName:'Dr. R. Ajith Kumar',
         titlePrefix: 'Scalpel in the OR ',
         titleHighlight: ' Racquet at the Tennis Court',
         description: '',
-        url: 'https://www.instagram.com/dr_psycoma/',
-        urlLabel: 'VIEW INSTAGRAM GALLERY',
+        url: 'https://x.com/dr_psycoma',
+        urlLabel: 'VIEW UNFILTERED SERVES ON X',
         btnClass: 'btn-record',
         image: ajithtennis,
         imageAlt: 'Tennis Photography',
+      },
+      {
+        id: 'kalimba',
+        badge: 'Music Magician ',
+        badgeIcon: true,
+        doctorName:'Dr. R. Ajith Kumar',
+        titlePrefix: 'Fine Dexterity at Work,',
+        titleHighlight: 'Acoustic Magic at Play',
+        description: '',
+        url: 'https://www.youtube.com/@dr_psycoma',
+        urlLabel: 'VIEW YOUTUBE PLAYLIST',
+        btnClass: 'btn-record',
+        video: kalimba,
+        imageAlt: 'Kalimba',
       },
     ],
     coreFocus: {

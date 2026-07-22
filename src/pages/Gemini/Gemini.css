@@ -243,7 +243,12 @@
     gap: 1rem;
     margin-top: 1.75rem;
   }
-
+  .slide-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows full video in its original aspect ratio */
+    display: block;
+  }
   .btn-slider {
     background: var(--btn-slider-bg);
     border: 1px solid var(--btn-slider-border);
@@ -261,7 +266,8 @@
     color: #ffffff;
     border-color: var(--accent-cosmic);
     box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
-  }
+  } 
+
 
   #services-section {
     background-color: transparent;
@@ -308,9 +314,10 @@
     padding: 0.45rem 1.15rem;
     background-color: var(--badge-bg);
     border: 1px solid var(--badge-border);
+    width: fit-content;
     color: var(--accent-starlight);
     border-radius: 9999px;
-    font-size: 0.75rem;
+    font-size: 1 rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.075em;
@@ -320,7 +327,11 @@
       border-color 0.3s ease,
       color 0.3s ease;
   }
-
+  .badge-star-icon {
+    width: 0.9em;  /* Scales fluidly with whatever the font size is */
+    height: 0.9em;
+    flex-shrink: 0; /* Prevents icon from squishing on small mobile screens */
+  }
   /* Achievement Unified Card Format */
   .achievement-card {
     border: 1px solid var(--achievement-card-border);
@@ -391,7 +402,11 @@
   }
 
   .btn-record:hover {
-    background: var(--btn-record-hover);
+
+    /* 15% opacity background prevents the harsh white wash */
+    background: color-mix(in srgb, var(--accent-cosmic, #6366f1) 15%, transparent);
+    color: var(--accent-cosmic, #6366f1);
+    border-color: var(--accent-cosmic, #6366f1);
     transform: translateY(-2px);
     box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
   }
@@ -468,8 +483,11 @@
   }
 
   .btn-brand:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+        /* 15% opacity background prevents the harsh white wash */
+        background: color-mix(in srgb, var(--accent-cosmic, #6366f1) 15%, transparent)!important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+
   }
 
   .btn-instagram {
@@ -478,7 +496,7 @@
   }
   .btn-x {
     background: var(--brand-x);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /*border: 1px solid rgba(255, 255, 255, 0.15);*/
   }
   .btn-blogspot {
     background: var(--brand-blogspot);
@@ -490,7 +508,6 @@
   }
   .btn-spotify {
     background: var(--brand-spotify);
-    color: #000000;
     box-shadow: 0 4px 15px rgba(30, 215, 96, 0.25);
   }
   .btn-youtube {
